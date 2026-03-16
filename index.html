@@ -229,7 +229,7 @@
 
         .hack-card {
             background: #1e2a47;
-            width: 250px;
+            width: 280px;
             border-radius: 20px;
             overflow: hidden;
             cursor: pointer;
@@ -286,7 +286,7 @@
         .modal-content {
             background: #16213e;
             width: 90%;
-            max-width: 600px;
+            max-width: 650px;
             border-radius: 30px;
             padding: 30px;
             border: 2px solid #00ffff;
@@ -323,12 +323,50 @@
             color: #fff;
             line-height: 1.8;
             font-size: 16px;
+            margin-bottom: 20px;
         }
 
         .modal-description p {
             margin: 15px 0;
             border-right: 3px solid #00ffff;
             padding-right: 15px;
+        }
+
+        /* دوگمەکانی کلیل */
+        .key-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 25px 0 15px;
+        }
+
+        .key-btn {
+            background: linear-gradient(145deg, #2a2a4a, #1a1a3a);
+            border: 2px solid #ffaa00;
+            color: #ffaa00;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(255, 170, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .key-btn:hover {
+            background: #ffaa00;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ffaa00;
+        }
+
+        .key-btn i {
+            font-size: 18px;
         }
 
         .payment-methods {
@@ -393,6 +431,10 @@
                 width: 100%;
                 max-width: 350px;
             }
+            .key-btn {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -448,12 +490,19 @@
         </footer>
     </div>
 
-    <!-- مۆدال بۆ پیشاندانی وەسف -->
+    <!-- مۆدال بۆ پیشاندانی وەسفی هاک -->
     <div id="hack-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" id="close-modal">&times;</span>
             <div class="modal-title" id="modal-title"></div>
             <div class="modal-description" id="modal-description"></div>
+            <!-- بۆشایی بۆ دوگمەکانی کلیل -->
+            <div class="key-buttons" id="key-buttons"></div>
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="https://t.me/MAMDANEIL" target="_blank" class="contact-link" id="contact-link">
+                    <i class="fab fa-telegram"></i> <span data-i18n="contact">@MAMDANEIL</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -487,10 +536,7 @@
 فاستپەی 💰
 ئاسیاسێل💵
 کۆڕەک💵 
-ئێف ئای بی💵
-
-🟠کۆد بە تاک و کۆ بەردەستە بۆ بەژداریکردن نامە بنێرن ⬇️
-✅@MAMDANEIL`,
+ئێف ئای بی💵`,
                     ar: `هاك للآيفون والأندرويد (King MOD) 
 لآيفون وآيباد وأندرويد 💰
 بدون سيديا بدون جلبريك
@@ -513,10 +559,7 @@ aimbot - bullet track
 فاست بي
 آسياسيل
 كورك
-إف آي بي
-
-🟠الكود متاح فرادي أو مجموعات للاشتراك راسلنا ⬇️
-✅@MAMDANEIL`,
+إف آي بي`,
                     en: `iPhone & Android Hack (King MOD)
 For iPhone, iPad and Android 💰
 No Cydia, No Jailbreak
@@ -539,10 +582,7 @@ Payment methods 💰
 FastPay
 Asiacell
 Korek
-FIB
-
-🟠Code available individually or in groups. To subscribe, message us ⬇️
-✅@MAMDANEIL`
+FIB`
                 }
             },
             vnhax: {
@@ -573,11 +613,7 @@ FIB
 ٤هه‌زار به‌ فاستپه‌ی = ٥هه‌زار به‌كارت
 
 له‌ ده‌ره‌وه‌ی وڵات✅
-(ئایتونس - USDT-زه‌ین كاش )
-
-بۆ كڕینی هاك 
-نامه‌ بۆ ئه‌و یوزه‌ره‌ بنێرن👇
-🌐 : @MAMDANEIL`,
+(ئایتونس - USDT-زه‌ین كاش )`,
                     ar: `هاك آيفون (VnHax)
 لآيفون وآيباد 🔥
 بدون سيديا بدون جلبريك
@@ -603,10 +639,7 @@ Aimbot - Bullet track
 4 آلاف فاست بي = 5 آلاف كارت
 
 خارج البلاد✅
-(أيتونز - USDT - زين كاش)
-
-لشراء الهاك راسل👇
-🌐 : @MAMDANEIL`,
+(أيتونز - USDT - زين كاش)`,
                     en: `iPhone Hack (VnHax)
 For iPhone & iPad 🔥
 No Cydia, No Jailbreak
@@ -632,10 +665,7 @@ In Kurdistan
 4K FastPay = 5K card
 
 Outside country✅
-(iTunes - USDT - Zain Cash)
-
-To buy hack, message👇
-🌐 : @MAMDANEIL`
+(iTunes - USDT - Zain Cash)`
                 }
             },
             oasis: {
@@ -665,11 +695,7 @@ To buy hack, message👇
 ✅ ئاسیاسیڵ ♥ 
 لەبەر عمولە 5 هەزار = 4 فاستپەی
 
-له‌ ده‌ره‌وه‌ی وڵات پارەوەردەگرم
-
-بۆ كڕینی هاك 
-نامه‌ بۆ ئه‌و یوزه‌ره‌ بنێرن👇
-🌐 : @MAMDANEIL`,
+له‌ ده‌ره‌وه‌ی وڵات پارەوەردەگرم`,
                     ar: `هاك آيفون ( OASIS )
 لآيفون وآيباد 🏝
 بدون سيديا بدون جلبريك
@@ -694,10 +720,7 @@ Aimbot - Bullet track
 ✅ آسياسيل ♥
 بسبب العمولة 5 آلاف = 4 فاست بي
 
-خارج البلاد أقبل الدفع
-
-لشراء الهاك راسل👇
-🌐 : @MAMDANEIL`,
+خارج البلاد أقبل الدفع`,
                     en: `iPhone Hack (OASIS)
 For iPhone & iPad 🏝
 No Cydia, No Jailbreak
@@ -722,10 +745,7 @@ In Kurdistan
 ✅ Asiacell ♥
 Due to fee, 5K = 4 FastPay
 
-Outside country I accept payment
-
-To buy hack, message👇
-🌐 : @MAMDANEIL`
+Outside country I accept payment`
                 }
             },
             smartdogg: {
@@ -752,11 +772,7 @@ To buy hack, message👇
 ٤هه‌زار به‌ فاستپه‌ی = ٥هه‌زار به‌كارت
 
 له‌ ده‌ره‌وه‌ی وڵات✅
-(ئایتونس - USDT-زه‌ین كاش -په‌یپاڵ)
-
-بۆ كڕینی هاك 
-نامه‌ بۆ ئه‌و یوزه‌ره‌ بنێرن👇
-🌐 : @MAMDANEIL`,
+(ئایتونس - USDT-زه‌ین كاش -په‌یپاڵ)`,
                     ar: `هاك أندرويد ( Smart Dogg )
 لأندرويد بدون روت 🛡
 😎شهرياً 25 ألف✅
@@ -778,10 +794,7 @@ Aimbot VIP
 4 آلاف فاست بي = 5 آلاف كارت
 
 خارج البلاد✅
-(أيتونز - USDT - زين كاش - باي بال)
-
-لشراء الهاك راسل👇
-🌐 : @MAMDANEIL`,
+(أيتونز - USDT - زين كاش - باي بال)`,
                     en: `Android Hack (Smart Dogg)
 For Android No Root 🛡
 😎Monthly 25K✅
@@ -803,10 +816,7 @@ In Kurdistan
 4K FastPay = 5K card
 
 Outside country✅
-(iTunes - USDT - Zain Cash - PayPal)
-
-To buy hack, message👇
-🌐 : @MAMDANEIL`
+(iTunes - USDT - Zain Cash - PayPal)`
                 }
             },
             zolo: {
@@ -833,11 +843,7 @@ To buy hack, message👇
 ٤هه‌زار به‌ فاستپه‌ی = ٥هه‌زار به‌كارت
 
 له‌ ده‌ره‌وه‌ی وڵات✅
-(ئایتونس - USDT-زه‌ین كاش -په‌یپاڵ)
-
-بۆ كڕینی هاك 
-نامه‌ بۆ ئه‌و یوزه‌ره‌ بنێرن👇
-🌐 : @MAMDANEIL`,
+(ئایتونس - USDT-زه‌ین كاش -په‌یپاڵ)`,
                     ar: `هاك أندرويد ( Zolo Cheat )
 لأندرويد بدون روت 🖤
 😎شهرياً 15 ألف✅
@@ -859,10 +865,7 @@ Aimbot VIP
 4 آلاف فاست بي = 5 آلاف كارت
 
 خارج البلاد✅
-(أيتونز - USDT - زين كاش - باي بال)
-
-لشراء الهاك راسل👇
-🌐 : @MAMDANEIL`,
+(أيتونز - USDT - زين كاش - باي بال)`,
                     en: `Android Hack ( Zolo Cheat )
 For Android No Root 🖤
 😎Monthly 15K✅
@@ -884,10 +887,7 @@ In Kurdistan
 4K FastPay = 5K card
 
 Outside country✅
-(iTunes - USDT - Zain Cash - PayPal)
-
-To buy hack, message👇
-🌐 : @MAMDANEIL`
+(iTunes - USDT - Zain Cash - PayPal)`
                 }
             }
         };
@@ -904,7 +904,7 @@ To buy hack, message👇
                 if (btn.dataset.lang === lang) btn.classList.add('active');
             });
 
-            // وەرگێڕانی ناوەڕۆکی سادە (بۆ نموونە تایتڵەکان)
+            // وەرگێڕانی ناوەڕۆکی سادە
             elementsToTranslate.forEach(el => {
                 const key = el.dataset.i18n;
                 if (key === 'free_title') el.textContent = lang === 'ku' ? 'بەشی هاکی فری' : lang === 'ar' ? 'قسم الهاكات المجانية' : 'Free Hacks Section';
@@ -912,6 +912,7 @@ To buy hack, message👇
                 else if (key === 'vip_title') el.textContent = lang === 'ku' ? 'بەشی هاکی VIP' : lang === 'ar' ? 'قسم الهاكات VIP' : 'VIP Hacks Section';
                 else if (key === 'vip_desc') el.textContent = lang === 'ku' ? 'باشترین هاکەکان لەگەڵ تایبەتمەندییە تایبەتییەکان' : lang === 'ar' ? 'أفضل الهاكات بميزات حصرية' : 'Best hacks with exclusive features';
                 else if (key === 'vip_hacks_title') el.textContent = lang === 'ku' ? 'هاکە VIP' : lang === 'ar' ? 'الهاكات VIP' : 'VIP Hacks';
+                else if (key === 'contact') el.textContent = '@MAMDANEIL';
             });
 
             // نوێکردنەوەی ناوەکانی کارتەکان
@@ -950,14 +951,47 @@ To buy hack, message👇
         const modal = document.getElementById('hack-modal');
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-description');
+        const keyButtonsDiv = document.getElementById('key-buttons');
         const closeModal = document.getElementById('close-modal');
+        let currentHackKey = null;
 
         function showModal(hackKey) {
+            currentHackKey = hackKey;
             const hack = hacksData[hackKey];
             modalTitle.textContent = hack.title[currentLang];
-            // ڕێکخستنی وەسف بە هێڵی نوێ
+            // ڕێکخستنی وەسف
             let descText = hack.description[currentLang];
             modalDesc.innerHTML = descText.replace(/\n/g, '<br>').replace(/@MAMDANEIL/g, '<a href="https://t.me/MAMDANEIL" target="_blank" style="color:#00ffff;">@MAMDANEIL</a>');
+            
+            // دروستکردنی دوگمەکانی کلیل
+            let keyButtonsHtml = '';
+            const botUsername = 'MAMDANEIL'; // بۆت یوزەر نەیم
+
+            // وەرگێڕانی ناوەکانی دوگمەکان بەپێی زمان
+            const day1Text = currentLang === 'ku' ? 'کلیلی ١ ڕۆژی' : currentLang === 'ar' ? 'مفتاح يوم 1' : '1-Day Key';
+            const day7Text = currentLang === 'ku' ? 'کلیلی ٧ ڕۆژی' : currentLang === 'ar' ? 'مفتاح 7 أيام' : '7-Day Key';
+            const day30Text = currentLang === 'ku' ? 'کلیلی ٣٠ ڕۆژی' : currentLang === 'ar' ? 'مفتاح 30 يوم' : '30-Day Key';
+
+            // ناوی هاک بۆ پەیام
+            const hackName = hack.title[currentLang].split(' - ')[0] || hack.title[currentLang];
+
+            // دروستکردنی لینکەکان بۆ ناردنی پەیام بۆ بۆت
+            const createLink = (days) => {
+                let message = '';
+                if (currentLang === 'ku') message = `سڵاو، من ${hackName} - ${days} ڕۆژ دەوێت`;
+                else if (currentLang === 'ar') message = `السلام عليكم، أريد ${hackName} - مفتاح ${days} يوم`;
+                else message = `Hello, I want ${hackName} - ${days}-day key`;
+                return `https://t.me/${botUsername}?text=${encodeURIComponent(message)}`;
+            };
+
+            keyButtonsHtml += `
+                <a href="${createLink(1)}" target="_blank" class="key-btn"><i class="fas fa-key"></i> ${day1Text}</a>
+                <a href="${createLink(7)}" target="_blank" class="key-btn"><i class="fas fa-key"></i> ${day7Text}</a>
+                <a href="${createLink(30)}" target="_blank" class="key-btn"><i class="fas fa-key"></i> ${day30Text}</a>
+            `;
+
+            keyButtonsDiv.innerHTML = keyButtonsHtml;
+            
             modal.style.display = 'flex';
         }
 
@@ -974,7 +1008,6 @@ To buy hack, message👇
         const mainContent = document.getElementById('main-content');
         const joinBtn = document.getElementById('join-telegram-btn');
 
-        // پشکنینی ئەگەر پێشتر چووبێتە ناوەوە (بە کاشی)
         if (localStorage.getItem('joinedTelegram') === 'true') {
             joinScreen.style.display = 'none';
             mainContent.style.display = 'block';
@@ -984,9 +1017,6 @@ To buy hack, message👇
         }
 
         joinBtn.addEventListener('click', function() {
-            // کاتێک کلیک دەکات لەسەر لینک، دوای گەڕانەوە ڕەنگە پێویست بکات بە دەستی
-            // بەڵام بۆ سادەگی، لەمە ڕا دوای 3 چرکە وادادەنێین چووەتە ناوەوە
-            // دەتوانیت لە جێگای ڕاستەقینەدا ڕێگەی تر پیاده‌بکەیت
             localStorage.setItem('joinedTelegram', 'true');
             setTimeout(() => {
                 joinScreen.style.opacity = '0';
@@ -995,7 +1025,7 @@ To buy hack, message👇
                     mainContent.style.display = 'block';
                     setTimeout(() => { mainContent.style.opacity = '1'; }, 100);
                 }, 500);
-            }, 3000); // 3 چرکە دوای کرانەوەی لینک
+            }, 3000);
         });
 
         // بەشەکان کلیک
@@ -1006,7 +1036,6 @@ To buy hack, message👇
         document.getElementById('vip-section').addEventListener('click', function() {
             const vipHacksDiv = document.getElementById('vip-hacks');
             vipHacksDiv.classList.toggle('show');
-            // خوارەوەی پەڕە بڕۆ بۆ بینینی
             if (vipHacksDiv.classList.contains('show')) {
                 setTimeout(() => {
                     vipHacksDiv.scrollIntoView({ behavior: 'smooth' });
@@ -1018,16 +1047,16 @@ To buy hack, message👇
         langButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 setLanguage(btn.dataset.lang);
+                // ئەگەر مۆدال کراوە بێت، نوێی بکەوە
+                if (modal.style.display === 'flex' && currentHackKey) {
+                    showModal(currentHackKey);
+                }
             });
         });
 
-        // دەستپێکردن بە زمانی کوردی و کارتەکان
+        // دەستپێکردن
         setLanguage('ku');
         renderHackCards();
-
-        // پشکنینی ئەگەر لینکی تیلیگرام کرابێتەوە لەوەی کە ڕاستەوخۆ هاتبێت
-        // بەڵام لێرە وا دادەنێین کە بەکارهێنەر دوای چوونە ناوەوە پەیج ڕیفرێش دەکات
-        // ئەگەر لە localStorage هەبوو، نیشانی دەدەین
     </script>
 </body>
 </html>
