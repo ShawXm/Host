@@ -499,8 +499,8 @@
             <!-- بۆشایی بۆ دوگمەکانی کلیل -->
             <div class="key-buttons" id="key-buttons"></div>
             <div style="text-align: center; margin-top: 10px;">
-                <a href="https://t.me/MAMDANEIL" target="_blank" class="contact-link" id="contact-link">
-                    <i class="fab fa-telegram"></i> <span data-i18n="contact">@MAMDANEIL</span>
+                <a href="https://t.me/ConttactDH_Bot" target="_blank" class="contact-link" id="contact-link">
+                    <i class="fab fa-telegram"></i> <span data-i18n="contact">@ConttactDH_Bot</span>
                 </a>
             </div>
         </div>
@@ -912,7 +912,7 @@ Outside country✅
                 else if (key === 'vip_title') el.textContent = lang === 'ku' ? 'بەشی هاکی VIP' : lang === 'ar' ? 'قسم الهاكات VIP' : 'VIP Hacks Section';
                 else if (key === 'vip_desc') el.textContent = lang === 'ku' ? 'باشترین هاکەکان لەگەڵ تایبەتمەندییە تایبەتییەکان' : lang === 'ar' ? 'أفضل الهاكات بميزات حصرية' : 'Best hacks with exclusive features';
                 else if (key === 'vip_hacks_title') el.textContent = lang === 'ku' ? 'هاکە VIP' : lang === 'ar' ? 'الهاكات VIP' : 'VIP Hacks';
-                else if (key === 'contact') el.textContent = '@MAMDANEIL';
+                else if (key === 'contact') el.textContent = '@ConttactDH_Bot';
             });
 
             // نوێکردنەوەی ناوەکانی کارتەکان
@@ -965,20 +965,20 @@ Outside country✅
             
             // دروستکردنی دوگمەکانی کلیل
             let keyButtonsHtml = '';
-            const botUsername = 'MAMDANEIL'; // بۆت یوزەر نەیم
+            const botUsername = 'ConttactDH_Bot'; // بۆتی نوێ
 
             // وەرگێڕانی ناوەکانی دوگمەکان بەپێی زمان
             const day1Text = currentLang === 'ku' ? 'کلیلی ١ ڕۆژی' : currentLang === 'ar' ? 'مفتاح يوم 1' : '1-Day Key';
             const day7Text = currentLang === 'ku' ? 'کلیلی ٧ ڕۆژی' : currentLang === 'ar' ? 'مفتاح 7 أيام' : '7-Day Key';
             const day30Text = currentLang === 'ku' ? 'کلیلی ٣٠ ڕۆژی' : currentLang === 'ar' ? 'مفتاح 30 يوم' : '30-Day Key';
 
-            // ناوی هاک بۆ پەیام
+            // ناوی هاک بۆ پەیام (بە زمانی هەڵبژێردراو)
             const hackName = hack.title[currentLang].split(' - ')[0] || hack.title[currentLang];
 
             // دروستکردنی لینکەکان بۆ ناردنی پەیام بۆ بۆت
             const createLink = (days) => {
                 let message = '';
-                if (currentLang === 'ku') message = `سڵاو، من ${hackName} - ${days} ڕۆژ دەوێت`;
+                if (currentLang === 'ku') message = `سڵاو، من ${hackName} - کلیل ${days} ڕۆژ دەوێت`;
                 else if (currentLang === 'ar') message = `السلام عليكم، أريد ${hackName} - مفتاح ${days} يوم`;
                 else message = `Hello, I want ${hackName} - ${days}-day key`;
                 return `https://t.me/${botUsername}?text=${encodeURIComponent(message)}`;
@@ -1060,3 +1060,4 @@ Outside country✅
     </script>
 </body>
 </html>
+```ئێستا کاتێک کرتە لەسەر هەر یەک لە کارتەکانی بەشی VIP دەکەیت، لە مۆدالەکەدا سێ دوگمە دەبینیت بۆ کلیلی **١ ڕۆژی، ٧ ڕۆژی و ٣٠ ڕۆژی**. بە کرتەکردنی هەر یەکێکیان، ڕاستەوخۆ دەگوازرێیتەوە بۆ بۆتی تێلیگرام **@ConttactDH_Bot** لەگەڵ پەیامێکی ئامادەکراو کە ناوی هاکەکە و ژمارەی ڕۆژەکەیت تێدا دیاری کراوە. هەروەها بۆ هەر سێ زمانەکە (کوردی، عەرەبی، ئینگلیزی) پەیامەکە بەپێی زمانە هەڵبژێردراوەکەت دەردەکەوێت.
