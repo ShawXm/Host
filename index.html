@@ -44,7 +44,7 @@
             position: relative;
             z-index: 2;
         }
-        /* خانەی شین بۆ تێلێگرام - وەک وێنەکە */
+        /* خانەی شین - وەک وێنەکە */
         .telegram-blue-card {
             background: #0088cc;
             border: 1px solid #f5b81b;
@@ -93,7 +93,7 @@
             width: auto;
             padding-bottom: 5px;
         }
-        /* ڤیدیۆ کارتەکان - 3 لەسەر یەک، بێ قەوس */
+        /* ڤیدیۆ کارتەکان - 3x2 بێ قەوس */
         .videos-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -123,7 +123,7 @@
             font-weight: bold;
             color: #ffde9c;
         }
-        /* کارتەکانی هاک - وەک وێنەکە */
+        /* کارتەکانی هاک */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -255,7 +255,7 @@
 <div class="overlay-dark"></div>
 
 <div class="container">
-    <!-- خانەی شین - کلیک بکە بۆ چەناڵی تێلێگرام -->
+    <!-- خانەی شین بۆ تێلێگرام -->
     <div class="telegram-blue-card" onclick="window.open('https://t.me/DHVIP_2026', '_blank')">
         <div class="left">
             <i class="fab fa-telegram"></i>
@@ -265,7 +265,7 @@
         <i class="fas fa-arrow-right"></i>
     </div>
 
-    <!-- ڤیدیۆی فێرکاری هاکەکان (3x2) -->
+    <!-- ڤیدیۆی فێرکاری هاکەکان -->
     <div style="text-align: center;">
         <h2 class="section-title">🔥 ڤیدیۆی فێرکاری هاکەکان 🔥</h2>
     </div>
@@ -291,7 +291,7 @@
         <div class="hack-card"><div class="card-header"><span class="hack-name">⚡ لودر (Loader DH)</span><i class="fas fa-bolt"></i></div><div class="price-row"><span>📅 مانگانە</span><span>٢٠ هەزار</span></div><div class="price-row"><span>⏱ هەفتانە</span><span>١٠ هەزار</span></div></div>
     </div>
 
-    <!-- فۆڕمی داواکاری بۆ مام دانیال -->
+    <!-- فۆڕمی داواکاری -->
     <div class="order-section">
         <h2 style="text-align:center; color:#f5b81b;">📝 داواکاری بۆ مام دانیال</h2>
         <div class="payment-number">
@@ -338,7 +338,7 @@
 </div>
 
 <script>
-    // مۆدال بۆ پیشاندانی ڤیدیۆ
+    // مۆدال بۆ ڤیدیۆ
     const modal = document.getElementById('videoModal');
     const modalIframe = document.getElementById('modalIframe');
     const closeModal = document.querySelector('.close-modal');
@@ -356,7 +356,7 @@
     closeModal.onclick = () => { modal.style.display = 'none'; modalIframe.src = ''; };
     window.onclick = (e) => { if(e.target === modal) { modal.style.display = 'none'; modalIframe.src = ''; } };
 
-    // بۆت تۆکن و ئایدی
+    // بۆت
     const BOT_TOKEN = '8544276132:AAHEBViOnpPVti1bkVyCc7HO4N9MBxPcj6s';
     const CHAT_ID = '1423119149';
     const statusDiv = document.getElementById('statusMsg');
