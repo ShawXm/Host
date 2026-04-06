@@ -1,1062 +1,314 @@
 <!DOCTYPE html>
-<html lang="ku" dir="rtl">
+<html lang="ckb" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DH KING OF WAR - هاکی پۆبجی</title>
-    <!-- فۆنت و ستایلەکان -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>KANDYAS STORE 👑</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f0c1f, #1a1a2e);
-            color: #fff;
+            font-family: 'Cairo', sans-serif;
+            background: #000000;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* ڕێکخستنی سەرەتا بۆ ناچاری چوونە ناو تیلیگرام */
-        #telegram-join-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 10, 20, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            transition: opacity 0.5s;
-        }
-
-        .join-container {
-            background: #16213e;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-            border: 1px solid #00ffff;
-            max-width: 400px;
-            width: 90%;
-        }
-
-        .join-container h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #00ffff;
-            text-shadow: 0 0 10px cyan;
-        }
-
-        .join-container p {
-            margin-bottom: 30px;
-            font-size: 18px;
-            color: #ddd;
-        }
-
-        .join-btn {
-            background: linear-gradient(45deg, #00ffff, #0088cc);
-            color: #000;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-        }
-
-        .join-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px cyan;
-        }
-
-        .join-btn i {
-            margin-left: 10px;
-        }
-
-        #main-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 1s;
-            width: 100%;
-        }
-
-        /* هێدەر و گۆڕینی زمان */
-        header {
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #00ffff;
-            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00ffff;
-            text-shadow: 0 0 10px cyan;
-        }
-
-        .logo span {
             color: #fff;
+            overflow-x: hidden;
         }
 
-        .lang-selector {
-            display: flex;
-            gap: 10px;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 2px solid #00ffff;
-            color: #00ffff;
-            padding: 8px 15px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .lang-btn.active, .lang-btn:hover {
-            background: #00ffff;
-            color: #000;
-            box-shadow: 0 0 15px cyan;
-        }
-
-        /* بەشە سەرەکییەکان */
-        .sections {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 50px 20px;
-            flex-wrap: wrap;
-        }
-
-        .section-card {
-            background: rgba(22, 33, 62, 0.8);
-            backdrop-filter: blur(5px);
-            border-radius: 30px;
+        /* Header Section */
+        .header {
+            text-align: center;
             padding: 40px 20px;
-            width: 300px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.4s;
-            border: 2px solid transparent;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: linear-gradient(180deg, rgba(212,175,55,0.2) 0%, transparent 100%);
+            border-bottom: 2px solid #d4af37;
+            position: relative;
         }
 
-        .section-card.free {
-            border-color: #00ff88;
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
-        }
-
-        .section-card.vip {
-            border-color: #ffaa00;
-            box-shadow: 0 0 30px rgba(255, 170, 0, 0.3);
-        }
-
-        .section-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .section-card.free:hover {
-            box-shadow: 0 0 40px #00ff88;
-        }
-
-        .section-card.vip:hover {
-            box-shadow: 0 0 40px #ffaa00;
-        }
-
-        .section-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        .section-card.free .section-icon {
-            color: #00ff88;
-        }
-
-        .section-card.vip .section-icon {
-            color: #ffaa00;
-        }
-
-        .section-card h2 {
-            font-size: 32px;
+        .crown {
+            font-size: 50px;
             margin-bottom: 10px;
+            filter: drop-shadow(0 0 10px #d4af37);
         }
 
-        .section-card p {
-            font-size: 16px;
+        .store-name {
+            font-size: 36px;
+            font-weight: 900;
+            color: #d4af37;
+            margin: 10px 0;
+            text-shadow: 0 0 20px rgba(212,175,55,0.5);
+        }
+
+        .subtitle {
+            color: #d4af37;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card-content {
             color: #ccc;
+            line-height: 1.8;
+            font-size: 16px;
         }
 
-        /* بەشی ڤی پی - کارتەکانی هاک */
-        .vip-hacks {
-            margin: 40px 20px;
-            display: none;
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
         }
 
-        .vip-hacks.show {
-            display: block;
+        @media (max-width: 600px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .hacks-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .hack-card {
-            background: #1e2a47;
-            width: 280px;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: 0.3s;
-            border: 1px solid #00ffff;
-            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2);
-        }
-
-        .hack-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px cyan;
-        }
-
-        .hack-header {
-            background: #0f3460;
+        .product-card {
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 10px;
             padding: 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #00ffff;
-            border-bottom: 2px solid cyan;
         }
 
-        .hack-body {
-            padding: 20px;
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: rgba(212,175,55,0.1);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            color: #ddd;
+            margin: 30px 0;
         }
 
-        .hack-body p {
+        .payment-title {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .phone-number {
+            font-size: 28px;
+            font-weight: 900;
+            color: #000;
+            background: #d4af37;
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
             margin: 10px 0;
         }
 
-        .hack-body i {
-            color: #ffaa00;
-            margin-left: 5px;
-        }
-
-        /* مۆدال بۆ پیشاندانی وەسفی هاک */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: #16213e;
-            width: 90%;
-            max-width: 650px;
-            border-radius: 30px;
-            padding: 30px;
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 50px cyan;
-            position: relative;
-            max-height: 80vh;
-            overflow-y: auto;
-            direction: rtl;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: #ff5555;
-            transition: 0.3s;
-        }
-
-        .close-modal:hover {
-            color: #ff0000;
-            transform: scale(1.2);
-        }
-
-        .modal-title {
-            font-size: 28px;
-            color: #00ffff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .modal-description {
-            color: #fff;
-            line-height: 1.8;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .modal-description p {
-            margin: 15px 0;
-            border-right: 3px solid #00ffff;
-            padding-right: 15px;
-        }
-
-        /* دوگمەکانی کلیل */
-        .key-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin: 25px 0 15px;
-        }
-
-        .key-btn {
-            background: linear-gradient(145deg, #2a2a4a, #1a1a3a);
-            border: 2px solid #ffaa00;
-            color: #ffaa00;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 5px 15px rgba(255, 170, 0, 0.3);
-            text-decoration: none;
-        }
-
-        .key-btn:hover {
-            background: #ffaa00;
-            color: #000;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #ffaa00;
-        }
-
-        .key-btn i {
-            font-size: 18px;
-        }
-
         .payment-methods {
-            background: #0f3460;
-            padding: 15px;
-            border-radius: 15px;
-            margin: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .payment-methods span {
-            background: #1e2a47;
-            padding: 8px 15px;
-            border-radius: 50px;
-            border: 1px solid #ffaa00;
-            font-weight: bold;
-        }
-
-        .contact-link {
-            background: #00ffff;
-            color: #000;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
+            color: #d4af37;
+            font-size: 16px;
             margin-top: 15px;
-            font-weight: bold;
-            transition: 0.3s;
         }
 
-        .contact-link:hover {
-            background: #ffaa00;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px orange;
+        /* Order Form */
+        .order-form {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(212,175,55,0.2);
         }
 
-        /* فوتر */
-        footer {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+        .form-title {
             text-align: center;
-            margin-top: 50px;
-            border-top: 2px solid #00ffff;
-            font-size: 14px;
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
 
-        footer a {
-            color: #00ffff;
-            text-decoration: none;
-            font-weight: bold;
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        /* وەڵامدانەوە */
-        @media (max-width: 768px) {
-            .sections {
-                gap: 15px;
-            }
-            .section-card {
-                width: 100%;
-                max-width: 350px;
-            }
-            .key-btn {
-                padding: 10px 18px;
-                font-size: 14px;
-            }
+        .form-label {
+            display: block;
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .form-input::placeholder {
+            color: #666;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: #d4af37;
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0,0,0,0.8);
+            border-top: 1px solid rgba(212,175,55,0.3);
+            margin-top: 40px;
+        }
+
+        .owner {
+            font-size: 20px;
+            color: #d4af37;
+            font-weight: 700;
+        }
+
+        .crown-icon {
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
-    <!-- پەڕەی ناچاری چوونە ناو تیلیگرام -->
-    <div id="telegram-join-screen">
-        <div class="join-container">
-            <h2><i class="fab fa-telegram"></i> DH KING OF WAR</h2>
-            <p>بۆ بەکارهێنانی وێبسایتەکە، پێویستە یەکەم جار چوونە ناو کەناڵی تیلیگرام بکەیت</p>
-            <a href="https://t.me/DH_KING_of_WAR" target="_blank" class="join-btn" id="join-telegram-btn">
-                <i class="fab fa-telegram"></i> چوونە ناو کەناڵ
-            </a>
-            <p style="margin-top: 20px; font-size: 14px;">پاش چوونە ناو، کلیکی لینکەکە بکە یان پەیج ڕیفرێش بکە</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="crown">👑</div>
+        <h1 class="store-name">KANDYAS STORE 👑</h1>
+        <p class="subtitle">چەناڵی تێلێگرام KANDYAS</p>
+    </header>
+
+    <div class="container">
+        <!-- Video Tutorial Section -->
+        <div class="card">
+            <h2 class="card-title">🎥 ڤیدیۆی فێرکاری هاکەکان</h2>
+        </div>
+
+        <!-- Products Section -->
+        <div class="card">
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-name">OASIS King</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-name">iOS KING MOD</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-name">iOS ZOON Zolo</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-name">Cheat Loader DH</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment-section">
+            <h2 class="payment-title">بڕی پارەکە بنێرە بۆ ئەم ژمارەیە:</h2>
+            <div class="phone-number">0750 XXX XXXX</div>
+            <div class="payment-methods">کۆرەک / زین / ئاسیا / FIB / FastPay</div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="order-form">
+            <h2 class="form-title">📝 جۆری هاک و نرخەکان</h2>
+            <form>
+                <div class="form-group">
+                    <label class="form-label">ماوەی کۆدەکە هەڵبژێرە</label>
+                    <select class="form-select" required>
+                        <option value="">هەڵبژێرە</option>
+                        <option>1 ڕۆژ</option>
+                        <option>3 ڕۆژ</option>
+                        <option>7 ڕۆژ</option>
+                        <option>30 ڕۆژ</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ناوی تێلێگرامت یان یوزەرنەیم</label>
+                    <input type="text" class="form-input" placeholder="@username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ئەو ژمارەیەی پارەت پێ ناردووە</label>
+                    <input type="tel" class="form-input" placeholder="07XX XXX XXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">وێنەی پسوڵەی پارەکە (Screenshot)</label>
+                    <input type="file" class="form-input" accept="image/*" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">ناردن</button>
+            </form>
         </div>
     </div>
 
-    <!-- ناوەڕۆکی سەرەکی -->
-    <div id="main-content">
-        <header>
-            <div class="logo">DH <span>KING</span> OF WAR</div>
-            <div class="lang-selector">
-                <button class="lang-btn active" data-lang="ku">کوردی</button>
-                <button class="lang-btn" data-lang="ar">عربی</button>
-                <button class="lang-btn" data-lang="en">English</button>
-            </div>
-        </header>
-
-        <!-- دوو بەشە سەرەکیەکان -->
-        <div class="sections">
-            <div class="section-card free" id="free-section">
-                <div class="section-icon"><i class="fas fa-dragon"></i></div>
-                <h2 data-i18n="free_title">بەشی هاکی فری</h2>
-                <p data-i18n="free_desc">بۆ وەرگرتنی هاکە ڕایگانەکان کلیک لێرە بکە</p>
-            </div>
-            <div class="section-card vip" id="vip-section">
-                <div class="section-icon"><i class="fas fa-crown"></i></div>
-                <h2 data-i18n="vip_title">بەشی هاکی VIP</h2>
-                <p data-i18n="vip_desc">باشترین هاکەکان لەگەڵ تایبەتمەندییە تایبەتییەکان</p>
-            </div>
-        </div>
-
-        <!-- بەشی ڤی پی و کارتەکانی هاک -->
-        <div class="vip-hacks" id="vip-hacks">
-            <h2 style="text-align: center; color: #ffaa00; margin-bottom: 20px;" data-i18n="vip_hacks_title">هاکە VIP</h2>
-            <div class="hacks-grid" id="hacks-grid">
-                <!-- کارتەکان لە لایەن JavaScriptەوە دادەنرێن -->
-            </div>
-        </div>
-
-        <!-- فوتر -->
-        <footer>
-            <p>ئەم وێب سایتە درووست کراوە لەلایەن <a href="https://t.me/i4m_SHAW" target="_blank">@i4m_SHAW</a> | هەرکەسێ ویب سایتی ویست بۆی درووست دەکەین نامە بنێرن بۆمان</p>
-        </footer>
-    </div>
-
-    <!-- مۆدال بۆ پیشاندانی وەسفی هاک -->
-    <div id="hack-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-modal">&times;</span>
-            <div class="modal-title" id="modal-title"></div>
-            <div class="modal-description" id="modal-description"></div>
-            <!-- بۆشایی بۆ دوگمەکانی کلیل -->
-            <div class="key-buttons" id="key-buttons"></div>
-            <div style="text-align: center; margin-top: 10px;">
-                <a href="https://t.me/ConttactDH_Bot" target="_blank" class="contact-link" id="contact-link">
-                    <i class="fab fa-telegram"></i> <span data-i18n="contact">@ConttactDH_Bot</span>
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="crown-icon">👑</div>
+        <div class="owner">خاوەنی وێب سایت: KANDYAS 👑</div>
+    </footer>
 
     <script>
-        // داتای هەموو هاکەکان
-        const hacksData = {
-            kingmod: {
-                title: { ku: 'KING MOD - کینگ مۆد', ar: 'كينج مود - KING MOD', en: 'KING MOD' },
-                description: { 
-                    ku: `هاکی ئایفۆن و ئەندرۆید ( King MOD ) 
-بۆ ئایفۆن و ئایپاد و ئەندرۆید ده‌بێت 💰
-بێ سیدیا بێ جه‌لبره‌یك
-بە ئیساین بێ ڕۆت ⬇️
-😎مانگانە  30 هەزار✅
-😎هه‌فتانه‌  15 هەزار✅
-
-تایبه‌ت مه‌ندی هاک👇
-بینینی شوێنی نه‌فه‌ره‌كان
-بینینی شوێنی ئه‌شیاكان
-ئه‌یمبۆت - بوڵێت تراك
-كێڵمه‌سج كردنی سیلاحه‌كان
-( هاكی سكینی تێدایه‌ )
-ئه‌توانی هاكه‌كه‌ له‌ ڕیكۆرد یان لایڤ  یان ره‌سم بیشاریته‌وه‌ یاخود به‌دیاری بخه‌ی به‌دڵ خۆته
-
-خزمەت گوزاری 💰✔️
-گروپی تایبەت بە کڕیار 👑
-
-✪────✪
-
-لەم ڕێگایەوە پارە وەردەگرین 💰
-فاستپەی 💰
-ئاسیاسێل💵
-کۆڕەک💵 
-ئێف ئای بی💵`,
-                    ar: `هاك للآيفون والأندرويد (King MOD) 
-لآيفون وآيباد وأندرويد 💰
-بدون سيديا بدون جلبريك
-مع توقيع بدون روت ⬇️
-😎شهرياً 30 ألف✅
-😎أسبوعياً 15 ألف✅
-
-مميزات خاصة👇
-رؤية مواقع اللاعبين
-رؤية مواقع الأسلحة
-aimbot - bullet track
-تعديل الأسلحة
-(يحتوي على سكنات)
-يمكنك استخدام الهاك في ريكورد أو لايف أو رسمي أو حسب رغبتك
-
-خدمة عملاء 💰✔️
-مجموعة خاصة بالعملاء 👑
-
-طرق الدفع 💰
-فاست بي
-آسياسيل
-كورك
-إف آي بي`,
-                    en: `iPhone & Android Hack (King MOD)
-For iPhone, iPad and Android 💰
-No Cydia, No Jailbreak
-Signed, No Root ⬇️
-😎Monthly 30K✅
-😎Weekly 15K✅
-
-Hack Features👇
-See enemy locations
-See item locations
-Aimbot - Bullet track
-Weapon customization
-(Skin hack included)
-You can use the hack in record, live or official or as you like
-
-Customer service 💰✔️
-Private customer group 👑
-
-Payment methods 💰
-FastPay
-Asiacell
-Korek
-FIB`
-                }
-            },
-            vnhax: {
-                title: { ku: 'VNHAX - ئایفۆن', ar: 'VNHAX - آيفون', en: 'VNHAX - iPhone' },
-                description: { 
-                    ku: `هاکی ئایفۆن ( VnHax ) 
-بۆ ئایفۆن و ئایپاد ده‌بێت 🔥
-بێ سیدیا بێ جه‌لبره‌یك
-😎مانگانە 17 هەزار✅
-😎هەفتانە 12 هەزار✅
-
-تایبه‌ت مه‌ندی هاک👇
-بینینی شوێنی نه‌فه‌ره‌كان
-بینینی شوێنی ئه‌شیاكان
-ئه‌یمبۆت - بوڵێت تراك
-كێڵمه‌سج كردنی سیلاحه‌كان
-٦٠-٩٠-١٢٠ فریم
-ئه‌توانی هاكه‌كه‌ له‌ ڕیكۆرد یان ره‌سم بیشاریته‌وه‌ یاخود به‌دیاری بخه‌ی به‌دڵ خۆته‌
-
-خزمەت گوزاری 💰✔️
-گروپی تایبەت بە کڕیار 👑
-
-ڕێگەی پارەدان 💰 
-لە کوردستان
-✅ فاست پەی 🔴 
-✅ ئێف ئای بی💵
-✅ ئاسیاسیڵ ♥ 
-٤هه‌زار به‌ فاستپه‌ی = ٥هه‌زار به‌كارت
-
-له‌ ده‌ره‌وه‌ی وڵات✅
-(ئایتونس - USDT-زه‌ین كاش )`,
-                    ar: `هاك آيفون (VnHax)
-لآيفون وآيباد 🔥
-بدون سيديا بدون جلبريك
-😎شهرياً 17 ألف✅
-😎أسبوعياً 12 ألف✅
-
-المميزات👇
-رؤية مواقع اللاعبين
-رؤية مواقع الأسلحة
-Aimbot - Bullet track
-تعديل الأسلحة
-60-90-120 إطار
-يمكنك استخدام الهاك في تسجيل أو رسمي أو حسب رغبتك
-
-خدمة عملاء 💰✔️
-مجموعة خاصة بالعملاء 👑
-
-طرق الدفع 💰
-في كردستان
-✅ فاست بي 🔴
-✅ إف آي بي💵
-✅ آسياسيل ♥
-4 آلاف فاست بي = 5 آلاف كارت
-
-خارج البلاد✅
-(أيتونز - USDT - زين كاش)`,
-                    en: `iPhone Hack (VnHax)
-For iPhone & iPad 🔥
-No Cydia, No Jailbreak
-😎Monthly 17K✅
-😎Weekly 12K✅
-
-Features👇
-See enemy locations
-See item locations
-Aimbot - Bullet track
-Weapon customization
-60-90-120 FPS
-You can use the hack in record, live or official
-
-Customer service 💰✔️
-Private customer group 👑
-
-Payment methods 💰
-In Kurdistan
-✅ FastPay 🔴
-✅ FIB💵
-✅ Asiacell ♥
-4K FastPay = 5K card
-
-Outside country✅
-(iTunes - USDT - Zain Cash)`
-                }
-            },
-            oasis: {
-                title: { ku: 'OASIS - ئایفۆن', ar: 'OASIS - آيفون', en: 'OASIS - iPhone' },
-                description: { 
-                    ku: `هاکی ئایفۆن ( OASIS ) 
-بۆ ئایفۆن و ئایپاد ده‌بێت 🏝
-بێ سیدیا بێ جه‌لبره‌یك
-به‌ کۆگا بەوەندە دای دەنێین💰
-😎مانگانە  30هه‌زار ✅
-😎هەفتانە  20 هه‌زار ✅
-
- تایبه‌‌ت مه‌ندی هاک👇
-بینینی شوێنی نه‌فه‌ره‌كان
-بینینی شوێنی ئه‌شیاكان
-ئه‌یمبۆت - بوڵێت تراك
-كێڵمه‌سج كردنی سیلاحه‌كان
-٦٠-٩٠-١٢٠ فریم ( FPS )
-ئه‌توانی هاكه‌كه‌ له‌ ڕیكۆرد یان ره‌سم بیشاریته‌وه‌ یاخود به‌دیاری بخه‌ی به‌دڵ خۆته‌
-
-خزمەت گوزاری 💰✔️
-گروپی تایبەت بە کڕیار 👑
-
-ڕێگەی پارەدان 💰 
-لە کوردستان
-✅ فاست پەی 🔴 
-✅ ئاسیاسیڵ ♥ 
-لەبەر عمولە 5 هەزار = 4 فاستپەی
-
-له‌ ده‌ره‌وه‌ی وڵات پارەوەردەگرم`,
-                    ar: `هاك آيفون ( OASIS )
-لآيفون وآيباد 🏝
-بدون سيديا بدون جلبريك
-نرسله عن بعد عبر المتجر💰
-😎شهرياً 30 ألف✅
-😎أسبوعياً 20 ألف✅
-
-المميزات👇
-رؤية مواقع اللاعبين
-رؤية مواقع الأسلحة
-Aimbot - Bullet track
-تعديل الأسلحة
-60-90-120 إطار (FPS)
-يمكنك استخدام الهاك في تسجيل أو رسمي أو حسب رغبتك
-
-خدمة عملاء 💰✔️
-مجموعة خاصة بالعملاء 👑
-
-طرق الدفع 💰
-في كردستان
-✅ فاست بي 🔴
-✅ آسياسيل ♥
-بسبب العمولة 5 آلاف = 4 فاست بي
-
-خارج البلاد أقبل الدفع`,
-                    en: `iPhone Hack (OASIS)
-For iPhone & iPad 🏝
-No Cydia, No Jailbreak
-We send remotely via store💰
-😎Monthly 30K✅
-😎Weekly 20K✅
-
-Features👇
-See enemy locations
-See item locations
-Aimbot - Bullet track
-Weapon customization
-60-90-120 FPS
-You can use the hack in record or official
-
-Customer service 💰✔️
-Private customer group 👑
-
-Payment methods 💰
-In Kurdistan
-✅ FastPay 🔴
-✅ Asiacell ♥
-Due to fee, 5K = 4 FastPay
-
-Outside country I accept payment`
-                }
-            },
-            smartdogg: {
-                title: { ku: 'Smart Dogg - ئەندرۆید', ar: 'Smart Dogg - أندرويد', en: 'Smart Dogg - Android' },
-                description: { 
-                    ku: `هاکی ئه‌ندرۆید ( Smart Dogg ) 
-بۆ ئه‌ندرۆید بێ ڕۆت ده‌بێت 🛡
-😎مانگانە  25 هەزار✅
-😎حەفتانە  12 هەزار✅
-
-تایبه‌ت مه‌ندی هاک👇
-بینینی شوێنی نه‌فه‌ره‌كان
-بینینی شوێنی ئه‌شیاكان
-ئه‌یمبۆت ڤیئایپی
-
-خزمەت گوزاری 💰✔️
-گروپی تایبەت بە کڕیار 👑
-
-ڕێگەی پارەدان 💰 
-لە کوردستان
-✅ فاست پەی 🔴 
-✅ ئێف ئای بی💵
-✅ ئاسیاسیڵ ♥ 
-٤هه‌زار به‌ فاستپه‌ی = ٥هه‌زار به‌كارت
-
-له‌ ده‌ره‌وه‌ی وڵات✅
-(ئایتونس - USDT-زه‌ین كاش -په‌یپاڵ)`,
-                    ar: `هاك أندرويد ( Smart Dogg )
-لأندرويد بدون روت 🛡
-😎شهرياً 25 ألف✅
-😎أسبوعياً 12 ألف✅
-
-المميزات👇
-رؤية مواقع اللاعبين
-رؤية مواقع الأسلحة
-Aimbot VIP
-
-خدمة عملاء 💰✔️
-مجموعة خاصة بالعملاء 👑
-
-طرق الدفع 💰
-في كردستان
-✅ فاست بي 🔴
-✅ إف آي بي💵
-✅ آسياسيل ♥
-4 آلاف فاست بي = 5 آلاف كارت
-
-خارج البلاد✅
-(أيتونز - USDT - زين كاش - باي بال)`,
-                    en: `Android Hack (Smart Dogg)
-For Android No Root 🛡
-😎Monthly 25K✅
-😎Weekly 12K✅
-
-Features👇
-See enemy locations
-See item locations
-Aimbot VIP
-
-Customer service 💰✔️
-Private customer group 👑
-
-Payment methods 💰
-In Kurdistan
-✅ FastPay 🔴
-✅ FIB💵
-✅ Asiacell ♥
-4K FastPay = 5K card
-
-Outside country✅
-(iTunes - USDT - Zain Cash - PayPal)`
-                }
-            },
-            zolo: {
-                title: { ku: 'Zolo Cheat - ئەندرۆید', ar: 'Zolo Cheat - أندرويد', en: 'Zolo Cheat - Android' },
-                description: { 
-                    ku: `هاکی ئه‌ندرۆید ( Zolo Cheat ) 
-بۆ ئه‌ندرۆید بێ ڕۆت ده‌بێت 🖤
-😎مانگانە  15 هەزار✅
-😎حەفتانە  8 هەزار✅
-
-تایبه‌ت مه‌ندی هاک👇
-بینینی شوێنی نه‌فه‌ره‌كان
-بینینی شوێنی ئه‌شیاكان
-ئه‌یمبۆت ڤیئایپی
-
-خزمەت گوزاری 💰✔️
-گروپی تایبەت بە کڕیار 👑
-
-ڕێگەی پارەدان 💰 
-لە کوردستان
-✅ فاست پەی 🔴 
-✅ ئێف ئای بی💵
-✅ ئاسیاسیڵ ♥ 
-٤هه‌زار به‌ فاستپه‌ی = ٥هه‌زار به‌كارت
-
-له‌ ده‌ره‌وه‌ی وڵات✅
-(ئایتونس - USDT-زه‌ین كاش -په‌یپاڵ)`,
-                    ar: `هاك أندرويد ( Zolo Cheat )
-لأندرويد بدون روت 🖤
-😎شهرياً 15 ألف✅
-😎أسبوعياً 8 ألف✅
-
-المميزات👇
-رؤية مواقع اللاعبين
-رؤية مواقع الأسلحة
-Aimbot VIP
-
-خدمة عملاء 💰✔️
-مجموعة خاصة بالعملاء 👑
-
-طرق الدفع 💰
-في كردستان
-✅ فاست بي 🔴
-✅ إف آي بي💵
-✅ آسياسيل ♥
-4 آلاف فاست بي = 5 آلاف كارت
-
-خارج البلاد✅
-(أيتونز - USDT - زين كاش - باي بال)`,
-                    en: `Android Hack ( Zolo Cheat )
-For Android No Root 🖤
-😎Monthly 15K✅
-😎Weekly 8K✅
-
-Features👇
-See enemy locations
-See item locations
-Aimbot VIP
-
-Customer service 💰✔️
-Private customer group 👑
-
-Payment methods 💰
-In Kurdistan
-✅ FastPay 🔴
-✅ FIB💵
-✅ Asiacell ♥
-4K FastPay = 5K card
-
-Outside country✅
-(iTunes - USDT - Zain Cash - PayPal)`
-                }
-            }
-        };
-
-        // بەڕێوەبردنی زمان
-        let currentLang = 'ku';
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            langButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.lang === lang) btn.classList.add('active');
-            });
-
-            // وەرگێڕانی ناوەڕۆکی سادە
-            elementsToTranslate.forEach(el => {
-                const key = el.dataset.i18n;
-                if (key === 'free_title') el.textContent = lang === 'ku' ? 'بەشی هاکی فری' : lang === 'ar' ? 'قسم الهاكات المجانية' : 'Free Hacks Section';
-                else if (key === 'free_desc') el.textContent = lang === 'ku' ? 'بۆ وەرگرتنی هاکە ڕایگانەکان کلیک لێرە بکە' : lang === 'ar' ? 'اضغط هنا للحصول على الهاكات المجانية' : 'Click here for free hacks';
-                else if (key === 'vip_title') el.textContent = lang === 'ku' ? 'بەشی هاکی VIP' : lang === 'ar' ? 'قسم الهاكات VIP' : 'VIP Hacks Section';
-                else if (key === 'vip_desc') el.textContent = lang === 'ku' ? 'باشترین هاکەکان لەگەڵ تایبەتمەندییە تایبەتییەکان' : lang === 'ar' ? 'أفضل الهاكات بميزات حصرية' : 'Best hacks with exclusive features';
-                else if (key === 'vip_hacks_title') el.textContent = lang === 'ku' ? 'هاکە VIP' : lang === 'ar' ? 'الهاكات VIP' : 'VIP Hacks';
-                else if (key === 'contact') el.textContent = '@ConttactDH_Bot';
-            });
-
-            // نوێکردنەوەی ناوەکانی کارتەکان
-            renderHackCards();
-        }
-
-        // دروستکردنی کارتەکان
-        const hacksGrid = document.getElementById('hacks-grid');
-
-        function renderHackCards() {
-            let html = '';
-            const hacksKeys = ['kingmod', 'vnhax', 'oasis', 'smartdogg', 'zolo'];
-            hacksKeys.forEach(key => {
-                const hack = hacksData[key];
-                html += `
-                    <div class="hack-card" data-hack="${key}">
-                        <div class="hack-header">${hack.title[currentLang]}</div>
-                        <div class="hack-body">
-                            <p><i class="fas fa-check-circle"></i> ${currentLang === 'ku' ? 'کلیک بکە بۆ وەسف' : currentLang === 'ar' ? 'اضغط للوصف' : 'Click for description'}</p>
-                        </div>
-                    </div>
-                `;
-            });
-            hacksGrid.innerHTML = html;
-
-            // زیادکردنی کلیک بۆ هەر کارتێک
-            document.querySelectorAll('.hack-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    const hackKey = card.dataset.hack;
-                    showModal(hackKey);
-                });
-            });
-        }
-
-        // مۆدال
-        const modal = document.getElementById('hack-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-description');
-        const keyButtonsDiv = document.getElementById('key-buttons');
-        const closeModal = document.getElementById('close-modal');
-        let currentHackKey = null;
-
-        function showModal(hackKey) {
-            currentHackKey = hackKey;
-            const hack = hacksData[hackKey];
-            modalTitle.textContent = hack.title[currentLang];
-            // ڕێکخستنی وەسف
-            let descText = hack.description[currentLang];
-            modalDesc.innerHTML = descText.replace(/\n/g, '<br>').replace(/@MAMDANEIL/g, '<a href="https://t.me/MAMDANEIL" target="_blank" style="color:#00ffff;">@MAMDANEIL</a>');
-            
-            // دروستکردنی دوگمەکانی کلیل
-            let keyButtonsHtml = '';
-            const botUsername = 'ConttactDH_Bot'; // بۆتی نوێ
-
-            // وەرگێڕانی ناوەکانی دوگمەکان بەپێی زمان
-            const day1Text = currentLang === 'ku' ? 'کلیلی ١ ڕۆژی' : currentLang === 'ar' ? 'مفتاح يوم 1' : '1-Day Key';
-            const day7Text = currentLang === 'ku' ? 'کلیلی ٧ ڕۆژی' : currentLang === 'ar' ? 'مفتاح 7 أيام' : '7-Day Key';
-            const day30Text = currentLang === 'ku' ? 'کلیلی ٣٠ ڕۆژی' : currentLang === 'ar' ? 'مفتاح 30 يوم' : '30-Day Key';
-
-            // ناوی هاک بۆ پەیام (بە زمانی هەڵبژێردراو)
-            const hackName = hack.title[currentLang].split(' - ')[0] || hack.title[currentLang];
-
-            // دروستکردنی لینکەکان بۆ ناردنی پەیام بۆ بۆت
-            const createLink = (days) => {
-                let message = '';
-                if (currentLang === 'ku') message = `سڵاو، من ${hackName} - کلیل ${days} ڕۆژ دەوێت`;
-                else if (currentLang === 'ar') message = `السلام عليكم، أريد ${hackName} - مفتاح ${days} يوم`;
-                else message = `Hello, I want ${hackName} - ${days}-day key`;
-                return `https://t.me/${botUsername}?text=${encodeURIComponent(message)}`;
-            };
-
-            keyButtonsHtml += `
-                <a href="${createLink(1)}" target="_blank" class="key-btn"><i class="fas fa-key"></i> ${day1Text}</a>
-                <a href="${createLink(7)}" target="_blank" class="key-btn"><i class="fas fa-key"></i> ${day7Text}</a>
-                <a href="${createLink(30)}" target="_blank" class="key-btn"><i class="fas fa-key"></i> ${day30Text}</a>
-            `;
-
-            keyButtonsDiv.innerHTML = keyButtonsHtml;
-            
-            modal.style.display = 'flex';
-        }
-
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('داواکردنەکەت نێردرا!');
         });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) modal.style.display = 'none';
-        });
-
-        // چوونە ناو تیلیگرام و نمایشی ناوەڕۆک
-        const joinScreen = document.getElementById('telegram-join-screen');
-        const mainContent = document.getElementById('main-content');
-        const joinBtn = document.getElementById('join-telegram-btn');
-
-        if (localStorage.getItem('joinedTelegram') === 'true') {
-            joinScreen.style.display = 'none';
-            mainContent.style.display = 'block';
-            setTimeout(() => { mainContent.style.opacity = '1'; }, 100);
-        } else {
-            joinScreen.style.display = 'flex';
-        }
-
-        joinBtn.addEventListener('click', function() {
-            localStorage.setItem('joinedTelegram', 'true');
-            setTimeout(() => {
-                joinScreen.style.opacity = '0';
-                setTimeout(() => {
-                    joinScreen.style.display = 'none';
-                    mainContent.style.display = 'block';
-                    setTimeout(() => { mainContent.style.opacity = '1'; }, 100);
-                }, 500);
-            }, 3000);
-        });
-
-        // بەشەکان کلیک
-        document.getElementById('free-section').addEventListener('click', function() {
-            window.open('https://t.me/DH_KING_of_WAR', '_blank');
-        });
-
-        document.getElementById('vip-section').addEventListener('click', function() {
-            const vipHacksDiv = document.getElementById('vip-hacks');
-            vipHacksDiv.classList.toggle('show');
-            if (vipHacksDiv.classList.contains('show')) {
-                setTimeout(() => {
-                    vipHacksDiv.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            }
-        });
-
-        // گۆڕینی زمان
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setLanguage(btn.dataset.lang);
-                // ئەگەر مۆدال کراوە بێت، نوێی بکەوە
-                if (modal.style.display === 'flex' && currentHackKey) {
-                    showModal(currentHackKey);
-                }
-            });
-        });
-
-        // دەستپێکردن
-        setLanguage('ku');
-        renderHackCards();
     </script>
 </body>
 </html>
