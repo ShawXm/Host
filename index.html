@@ -2,10 +2,11 @@
 <html lang="ckb">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>MAM DANEIL STORE 👑 | DH KING of WAR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- فۆنتی باش و هاوشێوەی مام دانیال -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,11 +15,10 @@
         }
         body {
             background-color: #0a0a0a;
-            font-family: 'Cairo', 'Orbitron', sans-serif;
+            font-family: 'Tajawal', 'Cairo', 'Orbitron', sans-serif;
             color: #e6e6e6;
             overflow-x: hidden;
         }
-        /* پاشبنەمای ڤیدیۆیی */
         .video-background {
             position: fixed;
             top: 0;
@@ -27,7 +27,7 @@
             height: 100%;
             object-fit: cover;
             z-index: -2;
-            opacity: 0.75;
+            opacity: 0.7;
         }
         .overlay-dark {
             position: fixed;
@@ -35,121 +35,111 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(0,0,0,0.6) 0%, #000000e0 100%);
+            background: radial-gradient(circle at center, rgba(0,0,0,0.5) 0%, #000000cc 100%);
             z-index: -1;
         }
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 1.5rem 1rem 4rem;
+            padding: 1.2rem 1rem 3rem;
             position: relative;
             z-index: 2;
         }
-        /* خانەی سەرەوە - شین بۆ تێلێگرام - کلیک بکرێت بچێتە چەناڵ */
-        .telegram-top-card {
+        /* خانەی سەرەوەی تێلێگرام - تەنها هێما و ناو */
+        .telegram-header {
             background: linear-gradient(135deg, #0088cc, #005f8c);
-            border-radius: 12px;
-            padding: 14px 24px;
+            border-radius: 50px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            border: 1px solid #f5b81b;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
             cursor: pointer;
             transition: 0.2s;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #f5b81b;
         }
-        .telegram-top-card:hover {
-            transform: scale(1.01);
+        .telegram-header:hover {
+            transform: scale(1.02);
             background: linear-gradient(135deg, #0099ee, #006faa);
         }
-        .telegram-top-card .left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .telegram-top-card i {
-            font-size: 2rem;
+        .telegram-header i {
+            font-size: 1.6rem;
             color: white;
         }
-        .telegram-top-card span {
-            font-size: 1.1rem;
+        .telegram-header span {
+            font-size: 1rem;
             font-weight: bold;
             color: #FFF8E7;
-        }
-        .telegram-top-card .channel-name {
-            background: #00000077;
-            padding: 5px 14px;
-            border-radius: 30px;
-            font-family: 'Orbitron', monospace;
+            letter-spacing: 0.5px;
         }
         /* ناونیشانی سەرەکی */
         .main-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             font-family: 'Orbitron', monospace;
             background: linear-gradient(135deg, #F5AF19, #ffd966);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin: 20px 0 10px;
+            margin: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
-        /* بەشی ڤیدیۆکانی فێرکاری - ڕێکخستنی 3x2 (3 لەسەر یەک، دوای 3 لە بەرامبەر) */
-        .videos-section {
-            margin: 30px 0 40px;
+        /* بەشی ڤیدیۆکانی فێرکاری - 3x2 لەسەر موبایل و دێسکتۆپ */
+        .videos-wrapper {
+            margin: 25px 0 35px;
         }
-        .section-header {
+        .section-title {
             text-align: center;
-            margin-bottom: 25px;
-        }
-        .section-header h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #ffde9c;
+            margin-bottom: 20px;
             border-bottom: 2px solid #f5b81b;
             display: inline-block;
+            width: auto;
             padding-bottom: 6px;
         }
         .videos-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 14px;
         }
-        /* دوگمە بچووکەکانی فێرکاری - وەک ڕەسەنەکەی مام دانیال */
+        /* دوگمە بچووکەکانی فێرکاری */
         .video-btn {
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.7);
             border: 1px solid #f5b81b;
-            border-radius: 12px;
-            padding: 12px 8px;
+            border-radius: 14px;
+            padding: 10px 6px;
             text-align: center;
             cursor: pointer;
             transition: 0.2s;
             backdrop-filter: blur(4px);
         }
-        .video-btn:hover {
-            background: #f5b81b22;
-            border-color: #ffd966;
-            transform: translateY(-2px);
-        }
         .video-btn i {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: #f5b81b;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             display: block;
         }
         .video-btn span {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: #ffeaac;
         }
-        /* مۆدال بۆ پیشاندانی ڤیدیۆ لەناو وێب سایتدا */
+        .video-btn:hover {
+            background: #f5b81b22;
+            transform: translateY(-2px);
+        }
+        /* مۆدالی ڤیدیۆ */
         .video-modal {
             display: none;
             position: fixed;
@@ -157,137 +147,162 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.96);
+            background: rgba(0,0,0,0.97);
             z-index: 10000;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(10px);
         }
-        .modal-box {
-            background: #0f0f0f;
-            max-width: 750px;
-            width: 90%;
-            border-radius: 16px;
+        .modal-inner {
+            background: #0a0a0a;
+            max-width: 95%;
+            width: 500px;
+            border-radius: 20px;
             border: 2px solid #f5b81b;
-            padding: 16px;
-            position: relative;
+            padding: 12px;
         }
-        .modal-box iframe {
+        .modal-inner iframe {
             width: 100%;
-            height: 400px;
+            height: 300px;
             border-radius: 12px;
             border: none;
         }
         .close-modal {
-            position: absolute;
-            top: 8px;
-            right: 18px;
-            font-size: 28px;
+            text-align: right;
+            font-size: 24px;
             color: #f5b81b;
             cursor: pointer;
-            font-weight: bold;
+            margin-bottom: 6px;
         }
-        /* کارتەکانی هاکەکان - بە شێوازی ڕاستەوخۆ و بێ قەوس (وەک وێنەکە) */
+        /* کارتەکانی هاک - سیستەمی ئەکۆردیۆن (کلیک بکە ئەکرێتەوە) */
         .hacks-section {
             margin: 30px 0;
         }
-        .hacks-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-align: center;
-            margin: 30px 0 20px;
-            color: #ffde9c;
+        .hack-accordion {
+            background: rgba(15, 15, 10, 0.9);
+            border: 1px solid #f5b81b55;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            overflow: hidden;
         }
-        .hacks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-            gap: 20px;
+        .hack-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            transition: 0.2s;
         }
-        .hack-item {
-            background: rgba(10, 10, 10, 0.85);
-            border: 1px solid #f5b81b66;
-            border-radius: 12px;
-            padding: 15px;
+        .hack-header:hover {
+            background: rgba(245,184,27,0.15);
         }
-        .hack-name {
-            font-size: 1.3rem;
+        .hack-header .hack-name {
+            font-size: 1.2rem;
             font-weight: 800;
             color: #f5b81b;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #f5b81b55;
-            padding-bottom: 8px;
-            margin-bottom: 12px;
+            font-family: 'Orbitron', monospace;
         }
-        .price-row {
+        .hack-header i {
+            color: #f5b81b;
+            transition: 0.2s;
+        }
+        .hack-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: rgba(0,0,0,0.4);
+            padding: 0 18px;
+        }
+        .hack-details.show {
+            max-height: 200px;
+            padding: 12px 18px;
+        }
+        .price-item {
             display: flex;
             justify-content: space-between;
-            background: #00000055;
+            background: #00000066;
             border-radius: 30px;
-            padding: 8px 12px;
+            padding: 8px 14px;
             margin: 8px 0;
+            font-weight: 600;
         }
-        /* فۆڕم و بەشی داواکاری */
-        .order-form-section {
+        /* فۆڕم */
+        .order-form {
             background: rgba(0, 0, 0, 0.75);
             border: 1px solid #f5b81b;
-            border-radius: 16px;
-            padding: 25px;
-            margin: 35px 0;
+            border-radius: 20px;
+            padding: 22px;
+            margin: 30px 0;
         }
         .payment-number {
             background: #0f0e0a;
             border: 1px solid #f5b81b;
-            border-radius: 40px;
-            padding: 12px;
+            border-radius: 50px;
+            padding: 10px;
             text-align: center;
             margin: 15px 0;
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         .form-group label {
             display: block;
             margin-bottom: 6px;
             color: #ffeaac;
+            font-weight: 600;
         }
         input, select {
             width: 100%;
             padding: 12px 16px;
             background: #121212;
             border: 1px solid #f5b81b;
-            border-radius: 40px;
+            border-radius: 50px;
             color: white;
-            font-size: 0.95rem;
+            font-family: 'Tajawal', sans-serif;
         }
         .btn-submit {
             background: linear-gradient(95deg, #f5b81b, #e09d00);
             width: 100%;
             padding: 14px;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             border: none;
-            border-radius: 40px;
+            border-radius: 50px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 30px;
+            padding-top: 15px;
             border-top: 1px solid #f5b81b33;
-            color: #ac9a65;
+            font-size: 0.8rem;
         }
-        @media (max-width: 700px) {
+        @media (max-width: 680px) {
             .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            .video-btn {
+                padding: 8px 4px;
+            }
+            .video-btn i {
+                font-size: 1.2rem;
+            }
+            .video-btn span {
+                font-size: 0.65rem;
+            }
+            .hack-header .hack-name {
+                font-size: 1rem;
             }
         }
         @media (max-width: 480px) {
             .videos-grid {
-                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .video-btn span {
+                font-size: 0.6rem;
             }
         }
     </style>
@@ -299,195 +314,165 @@
 <div class="overlay-dark"></div>
 
 <div class="container">
-    <!-- خانەی شین - کلیک بکە بچێتە تێلێگرام -->
-    <div class="telegram-top-card" onclick="window.open('https://t.me/DHVIP_2026', '_blank')">
-        <div class="left">
-            <i class="fab fa-telegram"></i>
-            <span>چەناڵی تێلێگرام:</span>
-            <span class="channel-name">🔥 DH KING of WAR 🔥</span>
-        </div>
-        <i class="fas fa-arrow-right"></i>
+    <!-- دوگمەی تێلێگرام - تەنها هێما و ناوی چەناڵ -->
+    <div class="telegram-header" onclick="window.open('https://t.me/DHVIP_2026', '_blank')">
+        <i class="fab fa-telegram"></i>
+        <span>🔥 چەناڵی تێلێگرام: DH KING of WAR 🔥</span>
     </div>
 
-    <!-- ناونیشانی MAM DANEIL STORE -->
     <div class="main-title">
         <i class="fas fa-crown"></i> MAM DANEIL STORE <i class="fas fa-skull"></i>
     </div>
 
-    <!-- بەشی ڤیدیۆی فێرکاری - 6 دوگمەی بچووک (3 لەسەر یەک و دوای 3 لە بەرامبەر) -->
-    <div class="videos-section">
-        <div class="section-header">
-            <h2><i class="fas fa-play-circle"></i> ڤیدیۆی فێرکاری هاکەکان 🔥</h2>
-        </div>
+    <!-- 6 دوگمەی ڤیدیۆی فێرکاری (3x2) -->
+    <div class="videos-wrapper" style="text-align: center;">
+        <h2 class="section-title"><i class="fas fa-play-circle"></i> ڤیدیۆی فێرکاری هاکەکان</h2>
         <div class="videos-grid">
-            <!-- King iOS -->
-            <div class="video-btn" data-video="https://t.me/DHVIP_2026/106?embed=1">
-                <i class="fab fa-telegram"></i>
-                <span>👑 KING iOS</span>
-            </div>
-            <!-- iOS ZOON -->
-            <div class="video-btn" data-video="https://t.me/DHVIP_2026/107?embed=1">
-                <i class="fab fa-telegram"></i>
-                <span>📱 iOS ZOON</span>
-            </div>
-            <!-- Loader DH -->
-            <div class="video-btn" data-video="https://t.me/DHVIP_2026/109?embed=1">
-                <i class="fab fa-telegram"></i>
-                <span>⚡ Loader DH</span>
-            </div>
-            <!-- OASIS -->
-            <div class="video-btn" data-video="https://t.me/DHVIP_2026/104?embed=1">
-                <i class="fab fa-telegram"></i>
-                <span>🏖 OASIS</span>
-            </div>
-            <!-- KING MOD -->
-            <div class="video-btn" data-video="https://t.me/DHVIP_2026/106?embed=1">
-                <i class="fab fa-telegram"></i>
-                <span>💰 KING MOD</span>
-            </div>
-            <!-- Zolo Cheat -->
-            <div class="video-btn" data-video="https://t.me/DHVIP_2026/108?embed=1">
-                <i class="fab fa-telegram"></i>
-                <span>🖤 ZOLO CHEAT</span>
-            </div>
+            <div class="video-btn" data-video-id="106"><i class="fab fa-telegram"></i><span>👑 KING iOS</span></div>
+            <div class="video-btn" data-video-id="107"><i class="fab fa-telegram"></i><span>📱 iOS ZOON</span></div>
+            <div class="video-btn" data-video-id="109"><i class="fab fa-telegram"></i><span>⚡ Loader DH</span></div>
+            <div class="video-btn" data-video-id="104"><i class="fab fa-telegram"></i><span>🏖 OASIS</span></div>
+            <div class="video-btn" data-video-id="106"><i class="fab fa-telegram"></i><span>💰 KING MOD</span></div>
+            <div class="video-btn" data-video-id="108"><i class="fab fa-telegram"></i><span>🖤 ZOLO CHEAT</span></div>
         </div>
     </div>
 
-    <!-- کارتەکانی هاکەکان و نرخەکان - وەک وێنەکەت -->
+    <!-- بەشی هاکەکان بە سیستەمی ئەکۆردیۆن -->
     <div class="hacks-section">
-        <div class="hacks-title">🔥 جۆری هاک و نرخەکان 🔥</div>
-        <div class="hacks-grid">
-            <div class="hack-item"><div class="hack-name">🏖 ئۆسیس (Oasis) <i class="fas fa-water"></i></div><div class="price-row"><span>📅 مانگانە</span><span>٢٥ هەزار</span></div><div class="price-row"><span>⏱ هەفتانە</span><span>١٣ هەزار</span></div></div>
-            <div class="hack-item"><div class="hack-name">💰 کینگ ئایۆئێس (King iOS) <i class="fas fa-chess-king"></i></div><div class="price-row"><span>📅 مانگانە</span><span>٢٥ هەزار</span></div><div class="price-row"><span>⏱ هەفتانە</span><span>١٣ هەزار</span></div></div>
-            <div class="hack-item"><div class="hack-name">🎮 ئایۆئێس زۆن (iOS ZOON) <i class="fas fa-microchip"></i></div><div class="price-row"><span>📅 مانگانە</span><span>٢٥ هەزار</span></div><div class="price-row"><span>⏱ هەفتانە</span><span>١٣ هەزار</span></div></div>
-            <div class="hack-item"><div class="hack-name">🖤 زۆلۆ چیت (Zolo Cheat) <i class="fas fa-ghost"></i></div><div class="price-row"><span>📅 مانگانە</span><span>٩ هەزار</span></div><div class="price-row"><span>⏱ هەفتانە</span><span>٦ هەزار</span></div></div>
-            <div class="hack-item"><div class="hack-name">💰 کینگ مۆد (KING MOD) <i class="fas fa-crown"></i></div><div class="price-row"><span>📅 مانگانە</span><span>٢٥ هەزار</span></div><div class="price-row"><span>⏱ هەفتانە</span><span>١٣ هەزار</span></div></div>
-            <div class="hack-item"><div class="hack-name">⚡ لودر (Loader DH) <i class="fas fa-bolt"></i></div><div class="price-row"><span>📅 مانگانە</span><span>٢٠ هەزار</span></div><div class="price-row"><span>⏱ هەفتانە</span><span>١٠ هەزار</span></div></div>
+        <div style="text-align:center; margin-bottom:15px;"><span style="font-size:1.3rem; font-weight:bold;">🔥 جۆری هاک و نرخەکان 🔥</span></div>
+        
+        <div class="hack-accordion">
+            <div class="hack-header"><span class="hack-name">🏖 ئۆسیس (Oasis)</span><i class="fas fa-chevron-down"></i></div>
+            <div class="hack-details"><div class="price-item"><span>📅 7 ڕۆژ (هەفتانە)</span><span>١٣ هەزار</span></div><div class="price-item"><span>📅 30 ڕۆژ (مانگانە)</span><span>٢٥ هەزار</span></div></div>
+        </div>
+        <div class="hack-accordion">
+            <div class="hack-header"><span class="hack-name">💰 کینگ ئایۆئێس (King iOS)</span><i class="fas fa-chevron-down"></i></div>
+            <div class="hack-details"><div class="price-item"><span>📅 7 ڕۆژ</span><span>١٣ هەزار</span></div><div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٥ هەزار</span></div></div>
+        </div>
+        <div class="hack-accordion">
+            <div class="hack-header"><span class="hack-name">🎮 ئایۆئێس زۆن (iOS ZOON)</span><i class="fas fa-chevron-down"></i></div>
+            <div class="hack-details"><div class="price-item"><span>📅 7 ڕۆژ</span><span>١٣ هەزار</span></div><div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٥ هەزار</span></div></div>
+        </div>
+        <div class="hack-accordion">
+            <div class="hack-header"><span class="hack-name">🖤 زۆلۆ چیت (Zolo Cheat)</span><i class="fas fa-chevron-down"></i></div>
+            <div class="hack-details"><div class="price-item"><span>📅 7 ڕۆژ</span><span>٦ هەزار</span></div><div class="price-item"><span>📅 30 ڕۆژ</span><span>٩ هەزار</span></div></div>
+        </div>
+        <div class="hack-accordion">
+            <div class="hack-header"><span class="hack-name">💰 کینگ مۆد (KING MOD)</span><i class="fas fa-chevron-down"></i></div>
+            <div class="hack-details"><div class="price-item"><span>📅 7 ڕۆژ</span><span>١٣ هەزار</span></div><div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٥ هەزار</span></div></div>
+        </div>
+        <div class="hack-accordion">
+            <div class="hack-header"><span class="hack-name">⚡ لودر (Loader DH)</span><i class="fas fa-chevron-down"></i></div>
+            <div class="hack-details"><div class="price-item"><span>📅 7 ڕۆژ</span><span>١٠ هەزار</span></div><div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٠ هەزار</span></div></div>
         </div>
     </div>
 
-    <!-- بەشی داواکاری + وێنە هەڵگرتن و ناردن بۆ بۆت -->
-    <div class="order-form-section">
-        <h2 style="text-align:center; color:#f5c542;"><i class="fas fa-paper-plane"></i> داواکاری بۆ مام دانیال</h2>
-        <div class="payment-number">
-            <i class="fas fa-exchange-alt"></i> بڕی پارەکە بنێرە بۆ ئەم ژمارەیە: <strong>07507177071</strong>
-        </div>
-        <div style="text-align:center; margin:5px 0 15px;">کۆرەک / زین / ئاسیا / FIB / FastPay</div>
+    <!-- فۆڕمی داواکاری + هەڵبژاردنی هاک -->
+    <div class="order-form">
+        <h3 style="text-align:center; color:#f5c542;"><i class="fas fa-paper-plane"></i> داواکاری بۆ مام دانیال</h3>
+        <div class="payment-number"><i class="fas fa-exchange-alt"></i> بڕی پارەکە بنێرە بۆ: <strong>07507177071</strong><br><small>کۆرەک / زین / ئاسیا / FIB / FastPay</small></div>
         
         <form id="orderForm">
-            <div class="form-group">
-                <label>⏳ ماوەی کۆدەکە هەڵبژێرە</label>
-                <select id="duration">
-                    <option value="هەفتانە (٧ ڕۆژ)">هەفتانە (٧ ڕۆژ)</option>
-                    <option value="مانگانە (٣٠ ڕۆژ)">مانگانە (٣٠ ڕۆژ)</option>
+            <div class="form-group"><label>🔥 جۆری هاکەکە هەڵبژێرە</label>
+                <select id="hackType">
+                    <option value="ئۆسیس (Oasis)">🏖 ئۆسیس (Oasis)</option>
+                    <option value="کینگ ئایۆئێس (King iOS)">💰 کینگ ئایۆئێس (King iOS)</option>
+                    <option value="ئایۆئێس زۆن (iOS ZOON)">🎮 ئایۆئێس زۆن (iOS ZOON)</option>
+                    <option value="زۆلۆ چیت (Zolo Cheat)">🖤 زۆلۆ چیت (Zolo Cheat)</option>
+                    <option value="کینگ مۆد (KING MOD)">💰 کینگ مۆد (KING MOD)</option>
+                    <option value="لودر (Loader DH)">⚡ لودر (Loader DH)</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>📛 ناوی تێلێگرامت یان یوزەرنەیم</label>
-                <input type="text" id="tgUsername" placeholder="مثال: @user123 یان ناوی تەواو" required>
+            <div class="form-group"><label>⏳ ماوەی کۆدەکە</label>
+                <select id="durationSelect">
+                    <option value="هەفتانە (7 ڕۆژ)">هەفتانە (7 ڕۆژ)</option>
+                    <option value="مانگانە (30 ڕۆژ)">مانگانە (30 ڕۆژ)</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label>📞 ئەو ژمارەیەی پارەت پێ ناردووە</label>
-                <input type="text" id="userPhone" placeholder="0750 000 0000" required>
-            </div>
-            <div class="form-group">
-                <label>🖼 وێنەی پسوڵەی پارەکە (Screenshot)</label>
-                <input type="file" id="screenshotFile" accept="image/*">
-            </div>
-            <button type="button" class="btn-submit" id="sendOrderBtn"><i class="fab fa-telegram"></i> ناردنی داواکاری بۆ بۆت</button>
-            <div id="statusMsg" style="margin-top:15px; text-align:center; color:#ffd966;"></div>
+            <div class="form-group"><label>📛 ناوی تێلێگرام / یوزەرنەیم</label><input type="text" id="tgUser" required></div>
+            <div class="form-group"><label>📞 ژمارەی تەلەفۆن (ئەوەی پارەت پێ ناردووە)</label><input type="text" id="phoneNum" required></div>
+            <div class="form-group"><label>🖼 وێنەی پسوڵە (Screenshot)</label><input type="file" id="screenshotFile" accept="image/*"></div>
+            <button type="button" class="btn-submit" id="sendToBot"><i class="fab fa-telegram"></i> ناردن بۆ بۆت</button>
+            <div id="statusMsg" style="margin-top:12px; text-align:center; color:#ffd966;"></div>
         </form>
     </div>
-
-    <div class="footer">
-        <i class="fas fa-shield-alt"></i> خاوەنی وێب سایت: MAM DANEIL 👑 | DH KING of WAR
-    </div>
+    <div class="footer"><i class="fas fa-shield-alt"></i> خاوەنی وێب سایت: MAM DANEIL 👑 | DH KING of WAR</div>
 </div>
 
-<!-- مۆدال بۆ پیشاندانی ڤیدیۆ -->
 <div id="videoModal" class="video-modal">
-    <div class="modal-box">
-        <span class="close-modal">&times;</span>
-        <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+    <div class="modal-inner">
+        <div class="close-modal">&times;</div>
+        <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
 <script>
-    // 1. مۆدال و پیشاندانی ڤیدیۆ لەناو وێب سایتدا
-    const modal = document.getElementById('videoModal');
-    const videoIframe = document.getElementById('videoIframe');
-    const closeSpan = document.querySelector('.close-modal');
-    const videoBtns = document.querySelectorAll('.video-btn');
-
-    videoBtns.forEach(btn => {
+    // 1. کارکردنی ڤیدیۆکان (هەموویان بە باشی)
+    const modalVideo = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const allVideoBtns = document.querySelectorAll('.video-btn');
+    
+    allVideoBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            let videoUrl = btn.getAttribute('data-video');
-            // ڕاستکردنەوەی لینکی تێلێگرام بۆ ئیمبێد
-            if(videoUrl && !videoUrl.includes('embed')) {
-                let parts = videoUrl.split('/');
-                let msgId = parts[parts.length-1];
-                videoUrl = `https://t.me/embed/DHVIP_2026/${msgId}?mode=tme`;
-            }
-            videoIframe.src = videoUrl;
-            modal.style.display = 'flex';
+            let vidId = btn.getAttribute('data-video-id');
+            let embedUrl = `https://t.me/embed/DHVIP_2026/${vidId}?mode=tme`;
+            videoFrame.src = embedUrl;
+            modalVideo.style.display = 'flex';
         });
     });
-    closeSpan.onclick = () => {
-        modal.style.display = 'none';
-        videoIframe.src = '';
-    };
-    window.onclick = (e) => {
-        if(e.target === modal) {
-            modal.style.display = 'none';
-            videoIframe.src = '';
-        }
-    };
-
-    // 2. ناردنی داتا و وێنە بۆ بۆت (بە بەکارهێنانی تۆکن و ئایدی کە داوات کرد)
+    closeModalBtn.onclick = () => { modalVideo.style.display = 'none'; videoFrame.src = ''; };
+    window.onclick = (e) => { if(e.target === modalVideo) { modalVideo.style.display = 'none'; videoFrame.src = ''; } };
+    
+    // 2. سیستەمی ئەکۆردیۆن بۆ کارتەکان
+    const accordions = document.querySelectorAll('.hack-accordion');
+    accordions.forEach(acc => {
+        const header = acc.querySelector('.hack-header');
+        const details = acc.querySelector('.hack-details');
+        header.addEventListener('click', () => {
+            details.classList.toggle('show');
+            const icon = header.querySelector('i');
+            if(details.classList.contains('show')) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            else icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        });
+    });
+    
+    // 3. ناردن بۆ بۆت (بە تۆکن و ئایدی کە داوات کرد)
     const BOT_TOKEN = '8544276132:AAHEBViOnpPVti1bkVyCc7HO4N9MBxPcj6s';
     const CHAT_ID = '1423119149';
-
-    document.getElementById('sendOrderBtn').addEventListener('click', async function() {
-        const tgUser = document.getElementById('tgUsername').value.trim();
-        const phone = document.getElementById('userPhone').value.trim();
-        const duration = document.getElementById('duration').value;
+    const sendBtn = document.getElementById('sendToBot');
+    const statusDiv = document.getElementById('statusMsg');
+    
+    sendBtn.addEventListener('click', async () => {
+        const hack = document.getElementById('hackType').value;
+        const duration = document.getElementById('durationSelect').value;
+        const tgUser = document.getElementById('tgUser').value.trim();
+        const phone = document.getElementById('phoneNum').value.trim();
         const fileInput = document.getElementById('screenshotFile');
-        const statusDiv = document.getElementById('statusMsg');
-
+        
         if(!tgUser || !phone) {
             statusDiv.innerText = '⚠️ تکایە ناوی تێلێگرام و ژمارە پڕ بکەوە!';
             return;
         }
-
         statusDiv.innerText = '⏳ ڕەوانە دەکرێت...';
+        const caption = `🆕 داواکاری نوێ:\n🔥 هاک: ${hack}\n⏳ ماوە: ${duration}\n👤 یوزەر: ${tgUser}\n📞 ژمارە: ${phone}`;
         
-        // ئەگەر وێنە هەبێت، بە فۆرم دەیەت
         if(fileInput.files.length > 0) {
-            const file = fileInput.files[0];
             const formData = new FormData();
             formData.append('chat_id', CHAT_ID);
-            formData.append('caption', `🆕 داواکاری نوێ:\n👤 یوزەر: ${tgUser}\n📞 ژمارە: ${phone}\n⏳ ماوە: ${duration}`);
-            formData.append('photo', file);
+            formData.append('caption', caption);
+            formData.append('photo', fileInput.files[0]);
             try {
-                let res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, {
-                    method: 'POST',
-                    body: formData
-                });
-                if(res.ok) statusDiv.innerText = '✅ داواکاری و وێنەکە بە سەرکەوتوویی نێردرا!';
-                else statusDiv.innerText = '❌ هەڵە لە ناردنی وێنە (تۆکن یان ئایدی هەڵەیە؟)';
-            } catch(e) {
-                statusDiv.innerText = '❌ پەیوەندی بە بۆتەوە سەرکەوتوو نەبوو';
-            }
+                let res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, { method: 'POST', body: formData });
+                if(res.ok) statusDiv.innerText = '✅ داواکاری + وێنە نێردرا!';
+                else statusDiv.innerText = '❌ هەڵە لە ناردندا';
+            } catch(e) { statusDiv.innerText = '❌ پەیوەندی بە بۆتەوە شکست'; }
         } else {
-            // ناردنی تەنیا تێکست
-            const textMsg = `📝 داواکاری نوێ:\n👤 ${tgUser}\n📞 ${phone}\n⏳ ${duration}`;
             try {
-                let res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(textMsg)}`);
-                if(res.ok) statusDiv.innerText = '✅ زانیارییەکان نێردران بۆ بۆت (بەبێ وێنە)';
-                else statusDiv.innerText = '❌ هەڵە لە ناردندا (تۆکن یان ئایدی پشتڕاست بکەوە)';
-            } catch(e) {
-                statusDiv.innerText = '❌ پەیوەندی بە بۆتەوە شکستی هێنا';
-            }
+                let res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(caption)}`);
+                if(res.ok) statusDiv.innerText = '✅ زانیاری نێردرا (بەبێ وێنە)';
+                else statusDiv.innerText = '❌ هەڵە';
+            } catch(e) { statusDiv.innerText = '❌ پەیوەندی شکست'; }
         }
     });
 </script>
