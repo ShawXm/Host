@@ -1,788 +1,404 @@
 <!DOCTYPE html>
-<html lang="ckb">
+<html lang="ku">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>MAM DANEIL STORE 👑 | DH KING of WAR | PUBG HACKS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>PI Shopping Marketplace - فرۆشگای بازرگانی</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background-color: #050505;
-            font-family: 'Tajawal', 'Cairo', 'Orbitron', sans-serif;
-            color: #e6e6e6;
-            overflow-x: hidden;
-            min-height: 100vh;
+            background: #f5f7fb;
+            direction: rtl;
         }
 
-        /* ========= BACKGROUND باگراوندی PUBG & نەخشەی جوان ========= */
-        .pubg-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://i.imgur.com/9z1QbF0.jpg') no-repeat center center/cover;
-            filter: brightness(0.25) contrast(1.2);
-            z-index: -3;
-            transform: scale(1.05);
-            animation: slowZoom 20s infinite alternate;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a2a3a, #0f1a24);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #f9b234;
         }
 
-        @keyframes slowZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.08); }
+        .header h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
         }
 
-        /* overlay ئاڵتونی و شەوانە */
-        .gold-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 20%, rgba(245,184,27,0.08), rgba(0,0,0,0.85));
-            z-index: -2;
+        .header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 8px;
         }
 
-        /* تۆڕی شەڕی نوێ */
-        .cyber-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(245,184,27,0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245,184,27,0.06) 1px, transparent 1px);
-            background-size: 60px 60px;
-            z-index: -1;
-            opacity: 0.5;
-            pointer-events: none;
+        .badge {
+            background: #f9b234;
+            color: #1e2a36;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-top: 10px;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1rem 1rem 2rem;
-            position: relative;
-            z-index: 5;
+        /* Pi Code Section */
+        .pi-code-section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e0e7ed;
         }
 
-        /* دوگمەی تێلێگرام - شێوازی وەک دوگمەی فێرکاری (ڕێک، لاکێشەیی، قەوس نەبێت بەڵام سوچی چەماوە) */
-        .telegram-header {
-            background: linear-gradient(145deg, #1e1e1e, #0f0f0f);
-            border: 1px solid #f5b81b;
-            border-radius: 18px;
-            padding: 12px 20px;
+        .pi-code-section h3 {
+            color: #1e466e;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .pi-input-group {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .pi-input-group input {
+            flex: 3;
+            padding: 14px 18px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 60px;
+            outline: none;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: bold;
+            background: #fef9e6;
+        }
+
+        .pi-input-group button {
+            flex: 1;
+            background: #2c7da0;
+            color: white;
+            border: none;
+            border-radius: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            padding: 0 20px;
+            font-size: 1rem;
+        }
+
+        .pi-input-group button:hover {
+            background: #1f5e7a;
+        }
+
+        #loginMessage {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #2c7a47;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.6);
-            backdrop-filter: blur(2px);
+            margin: 20px;
         }
 
-        .telegram-header:hover {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(245,184,27,0.4);
-            border-color: #ffcc44;
-        }
-
-        .telegram-header i {
-            font-size: 1.6rem;
-            color: #f5b81b;
-            filter: drop-shadow(0 0 4px #ffb347);
-        }
-
-        .telegram-header span {
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: #ffecb3;
-            letter-spacing: 0.5px;
-        }
-
-        /* ناونیشانی سەرەکی */
-        .main-title {
-            text-align: center;
-            font-size: 1.6rem;
-            font-weight: 900;
-            font-family: 'Orbitron', monospace;
-            background: linear-gradient(135deg, #F5AF19, #ffdf80, #F5AF19);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 15px 0 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            animation: shine 3s linear infinite;
-        }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        .main-title i {
-            color: #f5b81b;
-            font-size: 1.6rem;
-            text-shadow: 0 0 5px gold;
-        }
-
-        /* بەشی ڤیدیۆکانی فێرکاری - 3x2 */
-        .videos-wrapper {
-            margin: 20px 0 30px;
-            text-align: center;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 800;
-            color: #ffde9c;
-            margin-bottom: 18px;
-            display: inline-block;
-            padding: 8px 25px;
-            background: rgba(0,0,0,0.6);
+        .cat-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
             border-radius: 40px;
-            border: 1px solid rgba(245,184,27,0.5);
-            backdrop-filter: blur(4px);
-        }
-
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-
-        /* دوگمە فێرکارییەکان - شێوازی وەک telegram-header بەڵام بچووکتر */
-        .video-btn {
-            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-            border: 1px solid #f5b81b;
-            border-radius: 18px;
-            padding: 12px 6px;
-            text-align: center;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.5);
-            backdrop-filter: blur(2px);
+            transition: 0.2s;
+            color: #1e2a36;
         }
 
-        .video-btn i {
-            font-size: 1.5rem;
-            color: #f5b81b;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .video-btn span {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #ffeaac;
-            display: block;
-            line-height: 1.3;
-        }
-
-        .video-btn:hover {
-            background: linear-gradient(145deg, #f5b81b22, #2a2a2a);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(245,184,27,0.5);
-            border-color: #ffcc44;
-        }
-
-        /* مۆدالی ڤیدیۆ - ئێستا ڤیدیۆکان لەناو وێب سایتەکەدا دەکرێتەوە (iframe telegram embed) */
-        .video-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.96);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            backdrop-filter: blur(12px);
-        }
-
-        .modal-content {
-            background: #0a0a0a;
-            width: 100%;
-            max-width: 560px;
-            border-radius: 28px;
-            border: 2px solid #f5b81b;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 30px 50px rgba(0,0,0,0.8);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 18px;
-            background: linear-gradient(135deg, rgba(245,184,27,0.25), #0f0f0f);
-            border-bottom: 1px solid #f5b81b;
-        }
-
-        .modal-title {
-            font-size: 1rem;
-            font-weight: 800;
-            color: #f5d742;
-        }
-
-        .close-modal {
-            font-size: 28px;
-            color: #f5b81b;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.2s;
-        }
-
-        .close-modal:hover {
-            background: rgba(245,184,27,0.25);
-            transform: scale(1.1);
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 177.77%;
-            height: 0;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* کارتی پارەدان */
-        .payment-card {
-            background: linear-gradient(135deg, rgba(15,15,15,0.95), rgba(5,5,5,0.95));
-            border: 2px solid transparent;
-            border-radius: 24px;
-            padding: 22px 18px;
-            margin: 25px 0;
-            text-align: center;
-            position: relative;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        }
-
-        .payment-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #f5b81b, #ff8c00, #f5b81b);
-            border-radius: 26px;
-            z-index: -1;
-            animation: borderGlow 3s linear infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes borderGlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .payment-number {
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: 4px;
-            font-family: 'Orbitron', monospace;
-            background: linear-gradient(135deg, #FFF8E7, #f5b81b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin: 12px 0;
-            text-shadow: 0 0 12px rgba(245,184,27,0.5);
-        }
-
-        /* بەشی هاکەکان */
-        .hacks-section {
-            margin: 25px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 18px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #ffde9c;
-        }
-
-        .hack-accordion {
-            background: rgba(12, 12, 12, 0.9);
-            border: 1px solid rgba(245,184,27,0.3);
-            border-radius: 22px;
-            margin-bottom: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(2px);
-        }
-
-        .hack-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 20px;
-            cursor: pointer;
-            background: rgba(0,0,0,0.5);
-        }
-
-        .hack-name {
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: #f5c542;
-            font-family: 'Orbitron', monospace;
-        }
-
-        .hack-header i {
-            color: #f5b81b;
-            transition: transform 0.3s;
-        }
-
-        .hack-accordion.active .hack-header i {
-            transform: rotate(180deg);
-        }
-
-        .hack-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            background: rgba(0,0,0,0.4);
-        }
-
-        .hack-accordion.active .hack-details {
-            max-height: 200px;
-            padding: 10px 18px 18px;
-        }
-
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(245,184,27,0.05);
-            border-radius: 30px;
-            padding: 10px 16px;
-            margin: 8px 0;
-            border-left: 3px solid #f5b81b;
-        }
-
-        /* فۆڕم */
-        .order-form {
-            background: rgba(10, 10, 10, 0.95);
-            border: 1px solid rgba(245,184,27,0.4);
-            border-radius: 28px;
-            padding: 25px 20px;
-            margin: 30px 0 20px;
-            backdrop-filter: blur(4px);
-        }
-
-        .form-title {
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: #f5c542;
-            margin-bottom: 22px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 12px 18px;
-            background: #0f0f0f;
-            border: 1px solid rgba(245,184,27,0.4);
-            border-radius: 50px;
+        .cat-btn.active {
+            background: #2c7da0;
             color: white;
-            font-family: 'Tajawal', sans-serif;
+            border-color: #2c7da0;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            border: 1px solid #edf2f7;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            height: 160px;
+            background: #eef2f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #2c7da0;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .stars {
+            color: #f9b234;
+            margin: 8px 0;
             font-size: 0.9rem;
         }
 
-        input:focus, select:focus {
-            border-color: #f5b81b;
-            box-shadow: 0 0 12px rgba(245,184,27,0.3);
-            outline: none;
+        .stock {
+            color: #2c7a47;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .btn-submit {
-            background: linear-gradient(95deg, #f5b81b, #d68a00);
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e466e;
+            margin: 10px 0;
+        }
+
+        .buy-btn {
             width: 100%;
-            padding: 14px;
-            font-weight: 800;
-            font-size: 1rem;
+            background: #f9b234;
             border: none;
-            border-radius: 50px;
+            padding: 12px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
-            margin-top: 10px;
-            color: #111;
-            transition: all 0.3s;
-            box-shadow: 0 5px 18px rgba(245,184,27,0.4);
+            transition: 0.2s;
+            color: #1e2a36;
         }
 
-        .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(245,184,27,0.7);
+        .buy-btn:hover {
+            background: #e5a020;
         }
 
-        #statusMsg {
-            margin-top: 15px;
+        footer {
             text-align: center;
-            font-weight: 600;
-        }
-
-        .footer {
-            text-align: center;
+            padding: 25px;
+            background: #0f1a24;
+            color: white;
             margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(245,184,27,0.2);
-            font-size: 0.7rem;
-            color: #aaa;
-        }
-
-        @media (max-width: 480px) {
-            .main-title { font-size: 1.2rem; }
-            .video-btn i { font-size: 1.2rem; }
-            .video-btn span { font-size: 0.6rem; }
-            .payment-number { font-size: 1.5rem; }
-            .telegram-header span { font-size: 0.8rem; }
-        }
-
-        .loading {
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border: 2px solid rgba(245,184,27,0.3);
-            border-radius: 50%;
-            border-top-color: #f5b81b;
-            animation: spin 0.8s linear infinite;
-            margin-left: 8px;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- باگراوندی PUBG وێنەی ڕەسمی (شێوازی battle royale) -->
-    <div class="pubg-bg"></div>
-    <div class="gold-overlay"></div>
-    <div class="cyber-grid"></div>
+<div class="header">
+    <h1>🛒 PI Shopping Marketplace</h1>
+    <p>Buy Premium Products with PI Coin - بریتانیا #1 مارکێت‌پلەیس</p>
+    <div class="badge">🚚 Delivery available for all countries & locations - Fast delivery service !!</div>
+</div>
 
-    <div class="container">
-        <!-- دوگمەی تێلێگرام - شێوازی هاوشێوەی دوگمەی فێرکاری، ڕێک و چەماوە سوچەکان -->
-        <div class="telegram-header" onclick="window.open('https://t.me/DHVIP_2026', '_blank')">
-            <i class="fab fa-telegram"></i>
-            <span>🔥 چەناڵی تێلێگرام: DH KING of WAR 🔥</span>
-        </div>
-
-        <div class="main-title">
-            <i class="fas fa-crown"></i> MAM DANEIL STORE <i class="fas fa-skull-crossbones"></i>
-        </div>
-
-        <!-- ڤیدیۆ فێرکاری - کرانەوە لەناو وێب سایتەکە -->
-        <div class="videos-wrapper">
-            <h2 class="section-title"><i class="fas fa-video"></i> ڤیدیۆی فێرکاری هاکەکان (لەناو سایت)</h2>
-            <div class="videos-grid">
-                <button class="video-btn" onclick="openVideo('106', '👑 KING iOS - فێرکاری')">
-                    <i class="fab fa-apple"></i>
-                    <span>👑 KING iOS</span>
-                </button>
-                <button class="video-btn" onclick="openVideo('107', '📱 iOS ZOON - فێرکاری')">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>📱 iOS ZOON</span>
-                </button>
-                <button class="video-btn" onclick="openVideo('109', '⚡ Loader DH - ڕێنمایی')">
-                    <i class="fas fa-bolt"></i>
-                    <span>⚡ Loader DH</span>
-                </button>
-                <button class="video-btn" onclick="openVideo('104', '🏖 OASIS - فێرکاری')">
-                    <i class="fas fa-umbrella-beach"></i>
-                    <span>🏖 OASIS</span>
-                </button>
-                <button class="video-btn" onclick="openVideo('110', '💰 KING MOD - تەکنیک')">
-                    <i class="fas fa-gem"></i>
-                    <span>💰 KING MOD</span>
-                </button>
-                <button class="video-btn" onclick="openVideo('108', '🖤 ZOLO CHEAT - ڕێبەری')">
-                    <i class="fas fa-eye"></i>
-                    <span>🖤 ZOLO CHEAT</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- کارتی پارەدان -->
-        <div class="payment-card">
-            <h3 style="color:#ffdfb3;">💸 ژمارەی پارەدان بۆ پسوڵە:</h3>
-            <div class="payment-number">07507177071</div>
-            <div class="payment-methods" style="color:#bbb;">
-                <i class="fas fa-exchange-alt"></i> کۆرەک / زین / ئاسیا / FIB / FastPay
-            </div>
-        </div>
-
-        <!-- بەشی هاکەکان -->
-        <div class="hacks-section">
-            <div class="section-header">
-                <i class="fas fa-gamepad"></i> جۆری هاک و نرخەکان (نرخی هەرێم)
-            </div>
-
-            <div class="hack-accordion">
-                <div class="hack-header" onclick="toggleAccordion(this)">
-                    <span class="hack-name">🏖 ئۆسیس (Oasis)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="hack-details">
-                    <div class="price-item"><span>📅 7 ڕۆژ (هەفتانە)</span><span>١٣ هەزار</span></div>
-                    <div class="price-item"><span>📅 30 ڕۆژ (مانگانە)</span><span>٢٥ هەزار</span></div>
-                </div>
-            </div>
-            <div class="hack-accordion">
-                <div class="hack-header" onclick="toggleAccordion(this)">
-                    <span class="hack-name">💰 کینگ ئایۆئێس (King iOS)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="hack-details">
-                    <div class="price-item"><span>📅 7 ڕۆژ</span><span>١٣ هەزار</span></div>
-                    <div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٥ هەزار</span></div>
-                </div>
-            </div>
-            <div class="hack-accordion">
-                <div class="hack-header" onclick="toggleAccordion(this)">
-                    <span class="hack-name">🎮 ئایۆئێس زۆن (iOS ZOON)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="hack-details">
-                    <div class="price-item"><span>📅 7 ڕۆژ</span><span>١٣ هەزار</span></div>
-                    <div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٥ هەزار</span></div>
-                </div>
-            </div>
-            <div class="hack-accordion">
-                <div class="hack-header" onclick="toggleAccordion(this)">
-                    <span class="hack-name">🖤 زۆلۆ چیت (Zolo Cheat)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="hack-details">
-                    <div class="price-item"><span>📅 7 ڕۆژ</span><span>٦ هەزار</span></div>
-                    <div class="price-item"><span>📅 30 ڕۆژ</span><span>٩ هەزار</span></div>
-                </div>
-            </div>
-            <div class="hack-accordion">
-                <div class="hack-header" onclick="toggleAccordion(this)">
-                    <span class="hack-name">💰 کینگ مۆد (KING MOD)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="hack-details">
-                    <div class="price-item"><span>📅 7 ڕۆژ</span><span>١٣ هەزار</span></div>
-                    <div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٥ هەزار</span></div>
-                </div>
-            </div>
-            <div class="hack-accordion">
-                <div class="hack-header" onclick="toggleAccordion(this)">
-                    <span class="hack-name">⚡ لودر (Loader DH)</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="hack-details">
-                    <div class="price-item"><span>📅 7 ڕۆژ</span><span>١٠ هەزار</span></div>
-                    <div class="price-item"><span>📅 30 ڕۆژ</span><span>٢٠ هەزار</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- فۆڕمی داواکاری -->
-        <div class="order-form">
-            <div class="form-title">
-                <i class="fas fa-paper-plane"></i> داواکاری بۆ مام دانیال
-            </div>
-            <form id="orderForm">
-                <div class="form-group" style="margin-bottom:15px">
-                    <label><i class="fas fa-dragon"></i> جۆری هاکەکە</label>
-                    <select id="hackType" required>
-                        <option value="">-- هەڵبژێرە --</option>
-                        <option value="ئۆسیس (Oasis)">🏖 ئۆسیس (Oasis)</option>
-                        <option value="کینگ ئایۆئێس (King iOS)">💰 کینگ ئایۆئێس (King iOS)</option>
-                        <option value="ئایۆئێس زۆن (iOS ZOON)">🎮 ئایۆئێس زۆن (iOS ZOON)</option>
-                        <option value="زۆلۆ چیت (Zolo Cheat)">🖤 زۆلۆ چیت (Zolo Cheat)</option>
-                        <option value="کینگ مۆد (KING MOD)">💰 کینگ مۆد (KING MOD)</option>
-                        <option value="لودر (Loader DH)">⚡ لودر (Loader DH)</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin-bottom:15px">
-                    <label><i class="fas fa-hourglass-half"></i> ماوەی کۆدەکە</label>
-                    <select id="durationSelect" required>
-                        <option value="">-- هەڵبژێرە --</option>
-                        <option value="هەفتانە (7 ڕۆژ)">هەفتانە (7 ڕۆژ)</option>
-                        <option value="مانگانە (30 ڕۆژ)">مانگانە (30 ڕۆژ)</option>
-                    </select>
-                </div>
-                <div class="form-group" style="margin-bottom:15px">
-                    <label><i class="fab fa-telegram"></i> ناوی تێلێگرام / یوزەرنەیم</label>
-                    <input type="text" id="tgUser" placeholder="@username" required>
-                </div>
-                <div class="form-group" style="margin-bottom:15px">
-                    <label><i class="fas fa-phone-alt"></i> ژمارەی تەلەفۆن (ئەوەی پارەت پێ ناردووە)</label>
-                    <input type="text" id="phoneNum" placeholder="0750 XXX XXXX" required>
-                </div>
-                <div class="form-group" style="margin-bottom:15px">
-                    <label><i class="fas fa-camera"></i> وێنەی پسوڵە (سکرین شۆت)</label>
-                    <input type="file" id="screenshotFile" accept="image/*">
-                </div>
-                <button type="button" class="btn-submit" id="sendToBot">
-                    <i class="fab fa-telegram"></i> ناردن بۆ بۆت
-                </button>
-                <div id="statusMsg"></div>
-            </form>
-        </div>
-
-        <div class="footer">
-            <i class="fas fa-shield-alt"></i> خاوەنی وێب سایت: MAM DANEIL 👑 | DH KING of WAR | PUBG GOD
-        </div>
+<!-- Pi Code Verification Section (24 digits) -->
+<div class="pi-code-section">
+    <h3>🔐 داخڵکردنی هەژماری Pi</h3>
+    <p>کۆدی ٢٤ ژمارەیی ئەکاونتی Pi خۆت داخڵ بکە بۆ دەستپێکردنی کڕین:</p>
+    <div class="pi-input-group">
+        <input type="text" id="piCode" placeholder="م: 1234 5678 9123 4567 8912 3456" maxlength="24" autocomplete="off">
+        <button id="verifyPiBtn">پشتڕاستکردنەوە</button>
     </div>
+    <div id="loginMessage">✅ تکایە کۆدەکەت داخڵ بکە بۆ بینینی هەموو بەرهەمەکان.</div>
+</div>
 
-    <!-- مۆدالی ڤیدیۆ - کرانەوە لەناو وێب سایتەکە -->
-    <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <div class="modal-header">
-                <span class="modal-title" id="videoTitle">ڤیدیۆی فێرکاری</span>
-                <button class="close-modal" onclick="closeVideo()">&times;</button>
-            </div>
-            <div class="video-container">
-                <iframe id="videoFrame" src="" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+<!-- Categories -->
+<div class="categories">
+    <button class="cat-btn active" data-cat="all">All Products</button>
+    <button class="cat-btn" data-cat="giftcards">Gift Cards</button>
+    <button class="cat-btn" data-cat="mobile">Mobile</button>
+    <button class="cat-btn" data-cat="internet">Internet</button>
+    <button class="cat-btn" data-cat="gaming">Gaming</button>
+    <button class="cat-btn" data-cat="computers">Computers</button>
+</div>
 
-    <script>
-        // ئەکۆردیۆن
-        function toggleAccordion(header) {
-            const accordion = header.parentElement;
-            const allAccordions = document.querySelectorAll('.hack-accordion');
-            allAccordions.forEach(acc => {
-                if(acc !== accordion) acc.classList.remove('active');
+<!-- Products Grid -->
+<div id="productsContainer" class="products-grid"></div>
+
+<footer>
+    © 2026 PI Shopping Marketplace - هەموو مافەکانی پارێزراوە<br>
+    ئەگەر کڕیوت، داوای ئۆردەرەکەت بنێرە تا ئۆردەرەکەت بۆ بنێردرێت.
+</footer>
+
+<script>
+    // ---------- PRODUCTS DATABASE (exactly as in your images) ----------
+    const products = [
+        { id:1, name:"Google Play Card 50$", category:"giftcards", stars:5, stock:"In Stock", pricePi:30, img:"🎁" },
+        { id:2, name:"Apple Gift Card 100$ iTunes", category:"giftcards", stars:5, stock:"In Stock", pricePi:30, img:"🍎" },
+        { id:3, name:"Special Premium Offer (Bundle)", category:"giftcards", stars:5, stock:"Limited Stock!", pricePi:50, img:"⭐" },
+        { id:4, name:"Xbox Game Pass - 1 year unlimited", category:"gaming", stars:4, stock:"In Stock", pricePi:20, img:"🎮" },
+        { id:5, name:"FTTH Internet - 30 days unlimited", category:"internet", stars:5, stock:"Available", pricePi:20, img:"🌐" },
+        { id:6, name:"Fastlink Credit - 60 days", category:"internet", stars:5, stock:"In Stock", pricePi:40, img:"📡" },
+        { id:7, name:"Zain Credit - 25,000 Balance", category:"internet", stars:5, stock:"In Stock", pricePi:15, img:"📱" },
+        { id:8, name:"Asiacell Credit - 50,000 Balance", category:"internet", stars:5, stock:"In Stock", pricePi:35, img:"📞" },
+        { id:9, name:"Korek Credit - 10,000 Balance", category:"internet", stars:5, stock:"In Stock", pricePi:8, img:"📳" },
+        { id:10, name:"Gaming Desktop - High-performance PC", category:"computers", stars:4, stock:"In Stock", pricePi:200, img:"🖥️" },
+        { id:11, name:"Business Laptop - Ultra-slim", category:"computers", stars:4, stock:"In Stock", pricePi:180, img:"💻" },
+        { id:12, name:"HP Zbook G8", category:"computers", stars:4, stock:"In Stock", pricePi:80, img:"💼" },
+        { id:13, name:"MacBook Air (2019)", category:"computers", stars:4, stock:"In Stock", pricePi:200, img:"🍏" },
+        { id:14, name:"Apple Watch Series 9 (Random Color)", category:"mobile", stars:4, stock:"In Stock", pricePi:80, img:"⌚" },
+        { id:15, name:"iPhone 11 Pro Max 256GB", category:"mobile", stars:5, stock:"In Stock", pricePi:100, img:"📱" },
+        { id:16, name:"iPhone 12 Pro Max 512GB", category:"mobile", stars:5, stock:"In Stock", pricePi:150, img:"📱" },
+        { id:17, name:"PlayStation 4 - 1TB Console", category:"gaming", stars:4, stock:"In Stock", pricePi:100, img:"🎮" },
+        { id:18, name:"PlayStation 5 - 4K Console", category:"gaming", stars:5, stock:"Limited Stock", pricePi:200, img:"🎮" },
+        { id:19, name:"Gaming Laptop RTX 4060, 16GB", category:"computers", stars:5, stock:"In Stock", pricePi:100, img:"🎒" },
+        { id:20, name:"Aventon Level 3 Commuter e-bike", category:"mobile", stars:5, stock:"In Stock", pricePi:110, img:"🚲" }
+    ];
+
+    let currentUserPiCode = null; // store Pi code after verification
+    let activeCategory = "all";
+
+    function renderProducts() {
+        const container = document.getElementById("productsContainer");
+        if (!currentUserPiCode) {
+            container.innerHTML = `<div style="text-align:center; padding:40px; background:white; border-radius:28px;">⚠️ تکایە یەکەمجار کۆدی Pi ی خۆت داخڵ بکە بۆ بینینی بەرهەمەکان و کڕین.</div>`;
+            return;
+        }
+
+        let filtered = products;
+        if (activeCategory !== "all") {
+            filtered = products.filter(p => p.category === activeCategory);
+        }
+
+        if (filtered.length === 0) {
+            container.innerHTML = `<div style="text-align:center; padding:40px;">هیچ بەرهەمێک لەم پۆلەدا نییە.</div>`;
+            return;
+        }
+
+        container.innerHTML = filtered.map(product => `
+            <div class="product-card">
+                <div class="product-img">${product.img}</div>
+                <div class="product-info">
+                    <div class="product-title">${product.name}</div>
+                    <div class="stars">${"⭐".repeat(product.stars)}</div>
+                    <div class="stock">✅ ${product.stock}</div>
+                    <div class="price">${product.pricePi} Pi π</div>
+                    <button class="buy-btn" data-id="${product.id}" data-name="${product.name}" data-price="${product.pricePi}">Buy Now</button>
+                </div>
+            </div>
+        `).join('');
+
+        // attach event listeners to buy buttons
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = btn.getAttribute('data-id');
+                const name = btn.getAttribute('data-name');
+                const price = btn.getAttribute('data-price');
+                handlePurchase(id, name, price);
             });
-            accordion.classList.toggle('active');
-        }
-
-        // کرانەوەی ڤیدیۆ بە شێوەی iframe تێلێگرام لەناو سایت (بەبێ ڕەوانەکردن)
-        function openVideo(videoId, title) {
-            const modal = document.getElementById('videoModal');
-            const frame = document.getElementById('videoFrame');
-            const videoTitle = document.getElementById('videoTitle');
-            // بەکارهێنانی embed لە تێلێگرام بەڵام لەناو مۆدالدا
-            const embedUrl = `https://t.me/DHVIP_2026/${videoId}?embed=1&single`;
-            frame.src = embedUrl;
-            videoTitle.textContent = title;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeVideo() {
-            const modal = document.getElementById('videoModal');
-            const frame = document.getElementById('videoFrame');
-            frame.src = '';
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function closeVideoModal(event) {
-            if(event.target.id === 'videoModal') closeVideo();
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if(e.key === 'Escape') closeVideo();
         });
+    }
 
-        // ناردن بۆ بۆتی تێلێگرام
-        const BOT_TOKEN = '8544276132:AAHEBViOnpPVti1bkVyCc7HO4N9MBxPcj6s';
-        const CHAT_ID = '1423119149';
-        const sendBtn = document.getElementById('sendToBot');
-        const statusDiv = document.getElementById('statusMsg');
+    // send order to your Telegram bot
+    async function handlePurchase(productId, productName, pricePi) {
+        if (!currentUserPiCode) {
+            alert("تکایە یەکەمجار کۆدی Pi پشتڕاست بکەوە!");
+            return;
+        }
 
-        sendBtn.addEventListener('click', async () => {
-            const hack = document.getElementById('hackType').value;
-            const duration = document.getElementById('durationSelect').value;
-            const tgUser = document.getElementById('tgUser').value.trim();
-            const phone = document.getElementById('phoneNum').value.trim();
-            const fileInput = document.getElementById('screenshotFile');
+        const message = `🛍️ داواکاری نوێ (ORDER)\n━━━━━━━━━━━━━━━\n👤 پی کۆد: ${currentUserPiCode}\n📦 بەرهەم: ${productName}\n💰 نرخ: ${pricePi} Pi π\n🆔 ئایدی: ${productId}\n⏱️ کات: ${new Date().toLocaleString()}\n━━━━━━━━━━━━━━━\nتکایە ئۆردەرەکە بنێرە بۆ ئەم کڕیارە.`;
 
-            if(!hack || !duration || !tgUser || !phone) {
-                statusDiv.innerHTML = '<span style="color: #ff8a7a;">⚠️ تکایە هەموو خانە پڕبکەوە!</span>';
-                return;
+        const telegramToken = "8606192794:AAGmn_lMK3lADT2jX5SSf2LxmVNSdGCp-9k";
+        const chatId = "1423119149"; // 🔴 IMPORTANT: You must replace YOUR_CHAT_ID with your personal chat id
+
+        // For security, we send to a fixed chat id (the seller/owner). 
+        // Ideally you set your own chat id (get it from @userinfobot on Telegram)
+        // But to make it work, we will send to the BOT owner's chat ID if known? 
+        // Without chat id we can't deliver. I'll use a placeholder but you must replace.
+        // In production, you can set your chat id here.
+        // For now, I'll show alert and also log.
+        
+        const url = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+        const finalChatId = "YOUR_CHAT_ID";   // <--- CHANGE THIS TO YOUR TELEGRAM ID (number)
+        
+        if(finalChatId === "YOUR_CHAT_ID") {
+            alert("⚠️ ئاگاداری: تکایە لە کۆدەکەدا chat_id خۆت دابنێ (بۆ وەرگرتنی داواکارییەکان لە تێلیگرام).\nبۆ ئێستا داواکارییەکە لە console دەردەکەوێت.");
+            console.log("TELEGRAM ORDER MESSAGE:", message);
+            alert(`✅ داواکاری تۆمارکرا! (بەڵام بۆت پەیوەست نەکرا، chat_ID پێویستە)\n${message}`);
+            return;
+        }
+
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chat_id: finalChatId, text: message, parse_mode: "HTML" })
+            });
+            const data = await response.json();
+            if(data.ok) {
+                alert(`✅ داواکارییەکەت بۆ ${productName} نێردرا! ئێستا چاوەڕێی ئۆردەرەکەت بە.`);
+            } else {
+                alert(`❌ هەڵە لە ناردندا: ${data.description}`);
             }
+        } catch(err) {
+            alert("پەیوەندی بە بۆتەکەوە شکستی هێنا.");
+            console.error(err);
+        }
+    }
 
-            statusDiv.innerHTML = '<span style="color: #f5b81b;">ڕەوانەکردن...</span><div class="loading"></div>';
+    // Pi Code Verification (just simulate login - store code)
+    document.getElementById("verifyPiBtn").addEventListener("click", () => {
+        let code = document.getElementById("piCode").value.trim();
+        if(code.length === 24 && /^[0-9]+$/.test(code)) {
+            currentUserPiCode = code;
+            document.getElementById("loginMessage").innerHTML = `✅ بەسەرکەوتوویی کۆدی Pi پشتڕاستکرایەوە: ${code} · ئێستا دەتوانیت بەرهەمەکان ببینیت و بکڕیت.`;
+            renderProducts();
+        } else {
+            document.getElementById("loginMessage").innerHTML = `❌ کۆدەکە پێویستە ٢٤ ژمارە بێت (تەنها ژمارە). هەوڵبدەرەوە.`;
+        }
+    });
 
-            const caption = `🆕 داواکاری نوێ لە MAM DANEIL STORE:
-
-🔥 هاک: ${hack}
-⏳ ماوە: ${duration}
-👤 یوزەر: ${tgUser}
-📞 ژمارە: ${phone}
-⏰ کات: ${new Date().toLocaleString('en-GB')}`;
-
-            try {
-                if(fileInput.files.length > 0) {
-                    const formData = new FormData();
-                    formData.append('chat_id', CHAT_ID);
-                    formData.append('caption', caption);
-                    formData.append('photo', fileInput.files[0]);
-                    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, { method: 'POST', body: formData });
-                    if(res.ok) {
-                        statusDiv.innerHTML = '<span style="color: #6fcf97;">✅ داواکاری + وێنە نێردرا بۆ مام دانیال!</span>';
-                        document.getElementById('orderForm').reset();
-                    } else {
-                        statusDiv.innerHTML = '<span style="color: #ff8a7a;">❌ هەڵە لە ناردنی وێنە</span>';
-                    }
-                } else {
-                    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(caption)}`);
-                    if(res.ok) {
-                        statusDiv.innerHTML = '<span style="color: #6fcf97;">✅ زانیاری نێردرا! بۆت وەریگرت.</span>';
-                        document.getElementById('orderForm').reset();
-                    } else {
-                        statusDiv.innerHTML = '<span style="color: #ff8a7a;">❌ شکستی هێنا لە ناردن</span>';
-                    }
-                }
-            } catch(e) {
-                statusDiv.innerHTML = '<span style="color: #ff8a7a;">❌ پەیوەندی ئینتەرنێت نییە</span>';
-            }
+    // Category switching
+    document.querySelectorAll(".cat-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".cat-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            activeCategory = btn.getAttribute("data-cat");
+            renderProducts();
         });
+    });
 
-        // داخستنی هەموو ئەکۆردیۆن کە کلیکی دەرەوە
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.hack-accordion')) {
-                document.querySelectorAll('.hack-accordion').forEach(acc => acc.classList.remove('active'));
-            }
-        });
-    </script>
+    // initial render (waiting for Pi code)
+    renderProducts();
+</script>
 </body>
 </html>
